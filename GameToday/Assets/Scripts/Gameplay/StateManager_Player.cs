@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StateManager_Player : MonoBehaviour
 {
+    public static StateManager_Player instance;
     public enum PlayerState
     {
         Moving,
@@ -12,11 +13,23 @@ public class StateManager_Player : MonoBehaviour
     }
 
     public PlayerState state;
-    void Start()
+
+    public bool isMoving;
+    public bool isDashing;
+    public bool isAttacking;
+    public bool isInHarmonyState;
+    private void Awake()
     {
+        if(instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
         
     }
-
     // Update is called once per frame
     void Update()
     {

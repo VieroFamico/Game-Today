@@ -20,12 +20,15 @@ public class Movement_Player : MonoBehaviour
 
     private Vector2 moveVector2;
 
-    private float dashCooldownCount = 0f;
+    private float currDashCooldown = 0f;
+    private int currDashAmount = 0;
     private bool isDashing;
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         dashTrails.emitting = false;
+        currDashCooldown = dashCooldown;
+        currDashAmount = dashAmount;
     }
 
     void Update()
@@ -50,8 +53,6 @@ public class Movement_Player : MonoBehaviour
         float yMovement = Input.GetAxisRaw("Vertical");
 
         moveVector2 = new Vector2(xMovement, yMovement);
-        Debug.Log(moveVector2);
-        
     }
 
     private void Movement()
@@ -64,26 +65,34 @@ public class Movement_Player : MonoBehaviour
 
     private void Dash()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && !isDashing && dashCooldownCount >= dashCooldown)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !isDashing && currDashAmount > 0)
         {
             StartCoroutine(DashProcess());
+
+            currDashAmount--;
+            if (currDashCooldown >= dashCooldown && currDashAmount < dashAmount) currDashCooldown = 0f;
         }
     }
     private void DashCooldown()
     {
-        dashCooldownCount += Time.deltaTime;
+        currDashCooldown += Time.deltaTime;
 
-        if (dashCooldownCount > dashCooldown)
+        if (currDashCooldown > dashCooldown)
         {
-            dashCooldownCount = dashCooldown;
+            currDashCooldown = dashCooldown;
             dashCooldownSlider.gameObject.SetActive(false);
+
+            if (currDashAmount < dashAmount)
+            {
+                currDashAmount = dashAmount;
+            }
         }
         else
         {
             dashCooldownSlider.gameObject.SetActive(true);
         }
 
-        dashCooldownSlider.value = dashCooldownCount / dashCooldown;
+        dashCooldownSlider.value = currDashCooldown / dashCooldown;
     }
 
     private IEnumerator DashProcess()
@@ -101,7 +110,6 @@ public class Movement_Player : MonoBehaviour
             yield return new WaitForSeconds(Time.deltaTime);
         }
 
-        dashCooldownCount = 0f;
         isDashing = false;
 
         yield return new WaitForSeconds(0.1f);
