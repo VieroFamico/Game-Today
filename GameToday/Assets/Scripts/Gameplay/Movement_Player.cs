@@ -9,6 +9,7 @@ public class Movement_Player : MonoBehaviour
     public TrailRenderer dashTrails;
     public Slider dashCooldownSlider;
     private Rigidbody2D rb2d;
+    private Animator animator;
 
     [Header("Variables")]
     public float moveSpeed;
@@ -17,8 +18,8 @@ public class Movement_Player : MonoBehaviour
     public float dashDuration;
     public float dashCooldown;
 
-
     private Vector2 moveVector2;
+    private Vector2 lastMoveVector2;
 
     private float currDashCooldown = 0f;
     private int currDashAmount = 0;
@@ -26,6 +27,7 @@ public class Movement_Player : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         dashTrails.emitting = false;
         currDashCooldown = dashCooldown;
         currDashAmount = dashAmount;
@@ -53,6 +55,14 @@ public class Movement_Player : MonoBehaviour
         float yMovement = Input.GetAxisRaw("Vertical");
 
         moveVector2 = new Vector2(xMovement, yMovement);
+
+        if(moveVector2.magnitude < 0.1f)
+        {
+            AnimateMovement(lastMoveVector2 * 0.1f);
+            return;
+        }
+        lastMoveVector2 = moveVector2;
+        AnimateMovement(moveVector2);
     }
 
     private void Movement()
@@ -116,5 +126,17 @@ public class Movement_Player : MonoBehaviour
 
         dashTrails.emitting = false;
     }
+    #endregion
+
+    #region Animation
+
+    private void AnimateMovement(Vector2 moveVector)
+    {
+
+        animator.SetFloat("Horizontal", moveVector.x);
+        animator.SetFloat("Vertical", moveVector.y);
+    }
+
+
     #endregion
 }
