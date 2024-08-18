@@ -10,7 +10,7 @@ public class Attacking_Player : MonoBehaviour
     public float BA_Duration;
     public int damage;
 
-    private Animator playerAnimation;
+    private Animator animator;
 
     private Vector2 attackTargetPos;
     private int attackStage = 0;
@@ -18,7 +18,7 @@ public class Attacking_Player : MonoBehaviour
 
     void Start()
     {
-        playerAnimation = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -41,13 +41,22 @@ public class Attacking_Player : MonoBehaviour
         }
 
         currBACancelDuration += Time.deltaTime;
+
+        if (StateManager_Player.instance.isAttacking)
+        {
+            animator.SetBool("Attacking", true);
+        }
+        else
+        {
+            animator.SetBool("Attacking", false);
+        }
     }
 
     private void Attack()
     {
         if(attackStage == 0)
         {
-            playerAnimation.SetTrigger("Attack1");
+            AnimateBasicAttack(attackStage);
             attackStage++;
 
             currBACancelDuration = 0f;
@@ -57,7 +66,7 @@ public class Attacking_Player : MonoBehaviour
         }
         else if(attackStage == 1)
         {
-            playerAnimation.SetTrigger("Attack2");
+            AnimateBasicAttack(attackStage);
             attackStage++;
 
             currBACancelDuration = 0f;
@@ -65,9 +74,9 @@ public class Attacking_Player : MonoBehaviour
             StartCoroutine(AttackingProcess());
 
         }
-        else if (attackStage == 3)
+        else if (attackStage == 2)
         {
-            playerAnimation.SetTrigger("Attack3");
+            AnimateBasicAttack(attackStage);
             attackStage++;
 
             currBACancelDuration = 0f;
@@ -101,11 +110,22 @@ public class Attacking_Player : MonoBehaviour
                 entity.TakeDamage(damage);
 
             }
-
         }
 
         yield return new WaitForSeconds(BA_Duration / 2);
 
         StateManager_Player.instance.isAttacking = false;
+    }
+
+    private void AnimateBasicAttack(int attackStage)
+    {
+        Vector2 attackVector = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        Vector2 direction = (attackVector - (Vector2)transform.position).normalized;
+
+        float tempVectorDistance = (attackStage + 1) * 0.1f;
+
+        animator.SetFloat("HorizontalAttackDirection", direction.x * tempVectorDistance);
+        animator.SetFloat("VerticalAttackDirection", direction.y * tempVectorDistance);
     }
 }

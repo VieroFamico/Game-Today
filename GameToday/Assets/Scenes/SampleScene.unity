@@ -11271,7 +11271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack1Collider: {fileID: 322196173}
   BA_PushForce: 5
-  BA_CancelDuration: 0.6
+  BA_CancelDuration: 0.75
   BA_Duration: 0.5
   damage: 20
 --- !u!1 &1900879760
