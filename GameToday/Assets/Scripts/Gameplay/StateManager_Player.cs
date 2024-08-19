@@ -18,6 +18,8 @@ public class StateManager_Player : MonoBehaviour
     public bool isDashing;
     public bool isAttacking;
     public bool isInHarmonyState;
+
+    public int currentRoom;
     private void Awake()
     {
         if(instance != null)

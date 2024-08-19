@@ -5,8 +5,9 @@ using UnityEngine;
 public class Base_Room : MonoBehaviour
 {
     public List<Pillar_Entity> roomPillars;
-    void Start()
-    {
+    public int roomNumber;
+    public virtual void Start()
+    { 
         
     }
 
