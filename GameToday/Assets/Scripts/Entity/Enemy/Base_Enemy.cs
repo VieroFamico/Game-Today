@@ -19,7 +19,8 @@ public class Base_Enemy : Entities
 
     public override void Start()
     {
-        currentHP = maxHP;
+        base.Start();
+        rb2d = GetComponent<Rigidbody2D>();
     }
 
     
@@ -92,8 +93,6 @@ public class Base_Enemy : Entities
             damageHitBox.transform.LookAt((Vector2)transform.position + dir);
             DealDamage();
         }
-            
-
     }
     private IEnumerator DealDamage()
     {
@@ -126,5 +125,11 @@ public class Base_Enemy : Entities
             }
 
         }
+    }
+
+    public override void Dead()
+    {
+        base.Dead();
+        Destroy(gameObject);
     }
 }
