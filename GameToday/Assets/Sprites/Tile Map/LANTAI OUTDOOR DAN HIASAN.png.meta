@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1ad5a3b133c778349bca4135367f697f
+guid: 03b4d39ec50ae844f995bb39f34bda01
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,19 +81,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -123,7 +110,427 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tile Map_0
+      name: LANTAI OUTDOOR DAN HIASAN_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f52ea0fc973f96244a7c0210a7f43990
+      internalID: 957702324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LANTAI OUTDOOR DAN HIASAN_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21a986c6bb88adb459e6b0777d862eda
+      internalID: 653644991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LANTAI OUTDOOR DAN HIASAN_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06c11ddacdfe75044b430f367dc4bcf6
+      internalID: -1567781489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LANTAI OUTDOOR DAN HIASAN_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3e2c3fc12286c34a9eae3dab562cba5
+      internalID: -1689691412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LANTAI OUTDOOR DAN HIASAN_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 738495d8f638dd7488ace56c8436814e
+      internalID: -397600028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LANTAI OUTDOOR DAN HIASAN_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ce8d7c21f94f24459a3b3d68cf593c2
+      internalID: -2097252550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LANTAI OUTDOOR DAN HIASAN_6
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 879ec19da3d17bf4bb113d28132e0a86
+      internalID: 420062908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LANTAI OUTDOOR DAN HIASAN_7
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1863ab06dc784f245a493c21a8cc9eb4
+      internalID: 1615960619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LANTAI OUTDOOR DAN HIASAN_8
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7799c7ec428c09b468f7dfa73f500898
+      internalID: 1727271890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LANTAI OUTDOOR DAN HIASAN_9
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5fdd9cc71b46fe4fa78c8bd230ad92e
+      internalID: -1131491294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LANTAI OUTDOOR DAN HIASAN_10
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97c04c6592861dc458e72c332f05eef1
+      internalID: 1140615095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LANTAI OUTDOOR DAN HIASAN_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6bf65ed399a55b4eb32d8b88c3fbb0c
+      internalID: -362009797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LANTAI OUTDOOR DAN HIASAN_12
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a9f1a224e8e0784a8de45eb313f428e
+      internalID: -105422987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LANTAI OUTDOOR DAN HIASAN_13
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e59fadbc6fd8c8a4683ce5fabba7d7ca
+      internalID: -1148942907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LANTAI OUTDOOR DAN HIASAN_14
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63c6e13a9d0dec74b98d8ccfbd8f43b7
+      internalID: -1037866117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LANTAI OUTDOOR DAN HIASAN_15
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ae553c471012a843beae7d74c2db3ed
+      internalID: 1436536621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LANTAI OUTDOOR DAN HIASAN_16
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac49f03469a0d294a8c5b03883c09021
+      internalID: -2012874802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LANTAI OUTDOOR DAN HIASAN_17
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57427f25eac116947aa956f2036859be
+      internalID: 1134192084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LANTAI OUTDOOR DAN HIASAN_18
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebbf4d6cffaf3d14aaa939127edf1fe9
+      internalID: -456878204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LANTAI OUTDOOR DAN HIASAN_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31223ae315a11fe448d50da49d492aa4
+      internalID: 1832296123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LANTAI OUTDOOR DAN HIASAN_20
       rect:
         serializedVersion: 2
         x: 64
@@ -137,14 +544,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7f425582c7bcc24799a017fed8c8cd4
-      internalID: 1415743091
+      spriteID: 6350204eb70238a4db2701dc6062bc54
+      internalID: 550665738
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map_1
+      name: LANTAI OUTDOOR DAN HIASAN_21
       rect:
         serializedVersion: 2
         x: 128
@@ -158,14 +565,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c16eaeef8a2f6b144890dd803dcb6456
-      internalID: 1935844451
+      spriteID: 7dc170a459b119a4aab8271fc9aab2d2
+      internalID: 873707328
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map_2
+      name: LANTAI OUTDOOR DAN HIASAN_22
       rect:
         serializedVersion: 2
         x: 192
@@ -179,14 +586,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 215b8b73816bfff4ea9bb22cdec52181
-      internalID: -1515295367
+      spriteID: 373a144c5a5ac9e4192ea3ba7d9ee70f
+      internalID: 1591920968
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map_3
+      name: LANTAI OUTDOOR DAN HIASAN_23
       rect:
         serializedVersion: 2
         x: 256
@@ -200,14 +607,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e110bea11011e5645816a23e55019425
-      internalID: 155734547
+      spriteID: 89d6c44cafd0d1349848f2607f52e048
+      internalID: 1353166784
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map_4
+      name: LANTAI OUTDOOR DAN HIASAN_24
       rect:
         serializedVersion: 2
         x: 320
@@ -221,14 +628,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72156fa296fcf9e4fbf59a10dea5cc55
-      internalID: -1979847876
+      spriteID: 214e5fcd2950f4e4082714e575c352b1
+      internalID: -1246921233
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map_5
+      name: LANTAI OUTDOOR DAN HIASAN_25
       rect:
         serializedVersion: 2
         x: 384
@@ -242,14 +649,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 320cef7f39b6c7e46aec41aa7c524681
-      internalID: 940506941
+      spriteID: 1068bcb735725644388749f676afe37e
+      internalID: -1549052954
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map_6
+      name: LANTAI OUTDOOR DAN HIASAN_26
       rect:
         serializedVersion: 2
         x: 448
@@ -263,203 +670,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c9f3c7aef5522345a7e54b481c2fea2
-      internalID: -730316633
+      spriteID: b4cfcbb496f260c4aa216df4580eef70
+      internalID: -1390998287
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map_7
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 256
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 109ca7e6f182a6144890373db0f7d131
-      internalID: 1713119517
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_8
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 256
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 58b5dc88256463b47b8abb3f54ebb9cd
-      internalID: -1573452923
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_9
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 256
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 97ebc9568e049e54f8cc9d2f15eefab8
-      internalID: 201409279
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_10
-      rect:
-        serializedVersion: 2
-        x: 704
-        y: 256
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0ee3ab321de47064fba33254ffaf5c46
-      internalID: -1485900507
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_11
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 256
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2dfcce621fbd14e488f08594c19b6dc5
-      internalID: 323862583
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_12
-      rect:
-        serializedVersion: 2
-        x: 832
-        y: 256
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9923cf04e04f63d4c8dd3aa9667fd036
-      internalID: -724808959
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_13
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 192
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5c6b9d07492b1a04e9f960df8d41b563
-      internalID: -606686821
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_14
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 192
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b48e77d0a2318b44c8798c269ce300a2
-      internalID: -679988480
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_15
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 192
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 452c62fd9293a234395bd2e8a37d38b5
-      internalID: -791365912
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_16
+      name: LANTAI OUTDOOR DAN HIASAN_27
       rect:
         serializedVersion: 2
         x: 256
@@ -473,14 +691,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a0e61906768d7d478ce85ffb77e98b9
-      internalID: -373535543
+      spriteID: e18a8ece49a4fc7479e345afa7954c9c
+      internalID: 1311907747
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map_17
+      name: LANTAI OUTDOOR DAN HIASAN_28
       rect:
         serializedVersion: 2
         x: 320
@@ -494,14 +712,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c3ad791cb4f4e341927f204cfc5e421
-      internalID: -1570792000
+      spriteID: 8dfbe39f489df194ea68093d8a625dee
+      internalID: 633873106
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map_18
+      name: LANTAI OUTDOOR DAN HIASAN_29
       rect:
         serializedVersion: 2
         x: 384
@@ -515,14 +733,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e0a91e54a734024f86e7293e9b7d633
-      internalID: 214752532
+      spriteID: 2a88f72d563e9c74f8d5e68aae1d9d06
+      internalID: 1926240966
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map_19
+      name: LANTAI OUTDOOR DAN HIASAN_30
       rect:
         serializedVersion: 2
         x: 448
@@ -536,18 +754,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3344a14a530689b478e3a9d429b90ca1
-      internalID: 1316373515
+      spriteID: 91283060c12ac7649ae58f0ab7ffc4d9
+      internalID: -280709305
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map_20
+      name: LANTAI OUTDOOR DAN HIASAN_31
       rect:
         serializedVersion: 2
-        x: 512
-        y: 192
+        x: 0
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -557,119 +775,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b107aac807d6bd4583773c0899b5ecf
-      internalID: -413822879
+      spriteID: 5df3e173896fac14e90479a2f326072f
+      internalID: -1990659440
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map_21
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 192
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e84b0ac64dfb4e547a9786191115e7a2
-      internalID: 1635536808
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_22
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 192
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0cc94e4ef98a4a840aab472aacf9b32e
-      internalID: -94369507
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_23
-      rect:
-        serializedVersion: 2
-        x: 704
-        y: 192
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cbba3a685ca8c2648afaa669b092fd11
-      internalID: -1815009166
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_24
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 192
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 506fea1f7e9741a478a1278a24c50138
-      internalID: -794013033
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_25
-      rect:
-        serializedVersion: 2
-        x: 832
-        y: 192
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 71fbb242e9188f44abb725a9891c3bf1
-      internalID: -409066473
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_26
+      name: LANTAI OUTDOOR DAN HIASAN_32
       rect:
         serializedVersion: 2
         x: 64
@@ -683,14 +796,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4a68e4a38cdc4e45bd6f984e94c2ca1
-      internalID: 2078893259
+      spriteID: c37b1b8bcf9fae842904d3977b2941e4
+      internalID: 1877379725
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map_27
+      name: LANTAI OUTDOOR DAN HIASAN_33
       rect:
         serializedVersion: 2
         x: 128
@@ -704,14 +817,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32b2ec58f13ffb84a912f1edb1722b9e
-      internalID: -1291936159
+      spriteID: c4b3f2e92969f6b44bb764906f335949
+      internalID: 636512428
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map_28
+      name: LANTAI OUTDOOR DAN HIASAN_34
       rect:
         serializedVersion: 2
         x: 192
@@ -725,14 +838,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4f2580583af14847b494e7ae2cfbd63
-      internalID: -1433482740
+      spriteID: 654b374637abf054ca9f71b359f7aa43
+      internalID: 911139380
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map_29
+      name: LANTAI OUTDOOR DAN HIASAN_35
       rect:
         serializedVersion: 2
         x: 256
@@ -746,14 +859,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5659b8493710d2c4783abd191d68b0e1
-      internalID: 1713436952
+      spriteID: bd4ecae352ad36d4e8bbb460ea36730e
+      internalID: -1452489886
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map_30
+      name: LANTAI OUTDOOR DAN HIASAN_36
       rect:
         serializedVersion: 2
         x: 320
@@ -767,14 +880,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f93a16a529f8c864296ec55c85cc271d
-      internalID: -1932069557
+      spriteID: 93978e166aabb534f9dd783161a6a84a
+      internalID: -422744434
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map_31
+      name: LANTAI OUTDOOR DAN HIASAN_37
       rect:
         serializedVersion: 2
         x: 384
@@ -788,14 +901,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bb93ddaca53bc246b4a5436682251fe
-      internalID: 1988083887
+      spriteID: 311a859fad5ffbd4db1343006592b7f9
+      internalID: 1671600434
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map_32
+      name: LANTAI OUTDOOR DAN HIASAN_38
       rect:
         serializedVersion: 2
         x: 448
@@ -809,18 +922,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f9be513be02dec408584d89334f8127
-      internalID: 356971002
+      spriteID: 8e6d6afb875c8fc4188b36462ede058a
+      internalID: -1149805857
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map_33
+      name: LANTAI OUTDOOR DAN HIASAN_39
       rect:
         serializedVersion: 2
-        x: 512
-        y: 128
+        x: 0
+        y: 64
         width: 64
         height: 64
       alignment: 0
@@ -830,119 +943,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 094b3db3d099f074e80ae89db86feda6
-      internalID: -117177536
+      spriteID: 2c305a59929814e40860858e8c6ad0bf
+      internalID: -1800502237
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map_34
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d67e030c718990c43af94a288c279a77
-      internalID: 369567913
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_35
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1edbe3070e5bb8f439d1f4a1aa1e2f6f
-      internalID: 859124952
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_36
-      rect:
-        serializedVersion: 2
-        x: 704
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8c0db9a098d102749acc9637dbd4fa26
-      internalID: -1468921975
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_37
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e5d8943b9c357ff42bfb2b4edf6524ab
-      internalID: -957908416
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_38
-      rect:
-        serializedVersion: 2
-        x: 832
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1a43fdfb891970a41a216eadf650aad1
-      internalID: 621850175
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_39
+      name: LANTAI OUTDOOR DAN HIASAN_40
       rect:
         serializedVersion: 2
         x: 64
@@ -956,14 +964,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b034409416dc5814bb57dcd189047319
-      internalID: 1806195537
+      spriteID: bb473814347cf724b8f215c91a8d0c40
+      internalID: -52007814
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map_40
+      name: LANTAI OUTDOOR DAN HIASAN_41
       rect:
         serializedVersion: 2
         x: 128
@@ -977,14 +985,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68482cc030cabdf4cae7dbe1c307e3b5
-      internalID: -931184323
+      spriteID: 5cff50b21c6fa1944a0fbd9f27fdefdc
+      internalID: -507583002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map_41
+      name: LANTAI OUTDOOR DAN HIASAN_42
       rect:
         serializedVersion: 2
         x: 192
@@ -998,14 +1006,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 433cfe8c69b975143a59246a8987eb35
-      internalID: -1551510771
+      spriteID: d6a33f8e6344fee4d9df2fefd8510289
+      internalID: -498996773
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map_42
+      name: LANTAI OUTDOOR DAN HIASAN_43
       rect:
         serializedVersion: 2
         x: 256
@@ -1019,14 +1027,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de96a296b64f56e449825d12d40ff4e5
-      internalID: 158625627
+      spriteID: 318c7901f424cff4f95dfaaa57abb706
+      internalID: -43337618
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map_43
+      name: LANTAI OUTDOOR DAN HIASAN_44
       rect:
         serializedVersion: 2
         x: 320
@@ -1040,14 +1048,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05104beeddc99bc42b6edee14578c28e
-      internalID: -208694709
+      spriteID: 9aea84cc60534e94aa8a5143f5f2998e
+      internalID: 716720102
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map_44
+      name: LANTAI OUTDOOR DAN HIASAN_45
       rect:
         serializedVersion: 2
         x: 384
@@ -1061,14 +1069,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48b3c790593d2ae40b1972e972edaf98
-      internalID: 427490142
+      spriteID: 3c55a14254c75194197aee9d773b4af0
+      internalID: -1273512488
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map_45
+      name: LANTAI OUTDOOR DAN HIASAN_46
       rect:
         serializedVersion: 2
         x: 448
@@ -1082,18 +1090,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b90a66c6ca1db18418ed0d08bb019696
-      internalID: 295400677
+      spriteID: 903c8ab4fa53ba84b9489e11c63a37c2
+      internalID: 693344921
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map_46
+      name: LANTAI OUTDOOR DAN HIASAN_47
       rect:
         serializedVersion: 2
-        x: 512
-        y: 64
+        x: 0
+        y: 0
         width: 64
         height: 64
       alignment: 0
@@ -1103,119 +1111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 853343e4faa843541ab1acdef75f13d7
-      internalID: 184635197
+      spriteID: 8d44ad113f0c2f44ea8695dd9301580f
+      internalID: -1009913708
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map_47
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f412bec62187b824fa8ebb074c55530c
-      internalID: 753179150
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_48
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 980c8b0e1d0872544914e19e63aaf1de
-      internalID: 593738486
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_49
-      rect:
-        serializedVersion: 2
-        x: 704
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0eba581d085e3314e968d2ba4b7c1571
-      internalID: -434379182
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_50
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ea4802cc09b2d7448ae566cc5e4a38a4
-      internalID: -1429098997
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_51
-      rect:
-        serializedVersion: 2
-        x: 832
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0f559b05d2d1e874d8bc2dc591c869db
-      internalID: 62151421
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_52
+      name: LANTAI OUTDOOR DAN HIASAN_48
       rect:
         serializedVersion: 2
         x: 64
@@ -1229,14 +1132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d76c3c0dbc329c74f9c9fc617a1874b6
-      internalID: 1828570582
+      spriteID: de53d6718f76d4849b720fdb5a3ce1e8
+      internalID: 79500817
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map_53
+      name: LANTAI OUTDOOR DAN HIASAN_49
       rect:
         serializedVersion: 2
         x: 128
@@ -1250,14 +1153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c9d788fe7d5ff64bb5583d66af3b0d0
-      internalID: 1231522655
+      spriteID: aea41a4d7921eb74ea9bfb294af44e5e
+      internalID: 244391031
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile Map_54
+      name: LANTAI OUTDOOR DAN HIASAN_50
       rect:
         serializedVersion: 2
         x: 192
@@ -1271,218 +1174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf9bc5b61302e2d4bb77c748a69d19e2
-      internalID: -1277563581
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_55
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b26db6fe177f02248850b3410dc0166a
-      internalID: -667729498
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_56
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5deb1ba464519824cb530bc34810ccbf
-      internalID: 324493615
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_57
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8d561a5683b8b884bb1540e7111415f5
-      internalID: -2090828882
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_58
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cba1b0a34c9a4f048a967673d7f523ff
-      internalID: 996611453
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_59
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2ecec232ebd893b45a03c25804798745
-      internalID: 1911851229
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_60
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e3009290e15652e4983d332c424694c6
-      internalID: -675932743
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_61
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 98358f64fb4ac7e448aa89cbcad9689b
-      internalID: -1108022110
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_62
-      rect:
-        serializedVersion: 2
-        x: 704
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a1d76c714e978504faa3eb0705b42c2f
-      internalID: -1329331315
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_63
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 79c8b8ea8c63729419bd55e866cad824
-      internalID: 1402493944
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile Map_64
-      rect:
-        serializedVersion: 2
-        x: 832
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 12b9e69270991cd46a4c9a8f0455c6d2
-      internalID: -548731404
+      spriteID: fd9971b6d82e07446b7532d4700beb25
+      internalID: -567664713
       vertices: []
       indices: 
       edges: []
@@ -1498,71 +1191,57 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Tile Map_0: 1415743091
-      Tile Map_1: 1935844451
-      Tile Map_10: -1485900507
-      Tile Map_11: 323862583
-      Tile Map_12: -724808959
-      Tile Map_13: -606686821
-      Tile Map_14: -679988480
-      Tile Map_15: -791365912
-      Tile Map_16: -373535543
-      Tile Map_17: -1570792000
-      Tile Map_18: 214752532
-      Tile Map_19: 1316373515
-      Tile Map_2: -1515295367
-      Tile Map_20: -413822879
-      Tile Map_21: 1635536808
-      Tile Map_22: -94369507
-      Tile Map_23: -1815009166
-      Tile Map_24: -794013033
-      Tile Map_25: -409066473
-      Tile Map_26: 2078893259
-      Tile Map_27: -1291936159
-      Tile Map_28: -1433482740
-      Tile Map_29: 1713436952
-      Tile Map_3: 155734547
-      Tile Map_30: -1932069557
-      Tile Map_31: 1988083887
-      Tile Map_32: 356971002
-      Tile Map_33: -117177536
-      Tile Map_34: 369567913
-      Tile Map_35: 859124952
-      Tile Map_36: -1468921975
-      Tile Map_37: -957908416
-      Tile Map_38: 621850175
-      Tile Map_39: 1806195537
-      Tile Map_4: -1979847876
-      Tile Map_40: -931184323
-      Tile Map_41: -1551510771
-      Tile Map_42: 158625627
-      Tile Map_43: -208694709
-      Tile Map_44: 427490142
-      Tile Map_45: 295400677
-      Tile Map_46: 184635197
-      Tile Map_47: 753179150
-      Tile Map_48: 593738486
-      Tile Map_49: -434379182
-      Tile Map_5: 940506941
-      Tile Map_50: -1429098997
-      Tile Map_51: 62151421
-      Tile Map_52: 1828570582
-      Tile Map_53: 1231522655
-      Tile Map_54: -1277563581
-      Tile Map_55: -667729498
-      Tile Map_56: 324493615
-      Tile Map_57: -2090828882
-      Tile Map_58: 996611453
-      Tile Map_59: 1911851229
-      Tile Map_6: -730316633
-      Tile Map_60: -675932743
-      Tile Map_61: -1108022110
-      Tile Map_62: -1329331315
-      Tile Map_63: 1402493944
-      Tile Map_64: -548731404
-      Tile Map_7: 1713119517
-      Tile Map_8: -1573452923
-      Tile Map_9: 201409279
+      LANTAI OUTDOOR DAN HIASAN_0: 957702324
+      LANTAI OUTDOOR DAN HIASAN_1: 653644991
+      LANTAI OUTDOOR DAN HIASAN_10: 1140615095
+      LANTAI OUTDOOR DAN HIASAN_11: -362009797
+      LANTAI OUTDOOR DAN HIASAN_12: -105422987
+      LANTAI OUTDOOR DAN HIASAN_13: -1148942907
+      LANTAI OUTDOOR DAN HIASAN_14: -1037866117
+      LANTAI OUTDOOR DAN HIASAN_15: 1436536621
+      LANTAI OUTDOOR DAN HIASAN_16: -2012874802
+      LANTAI OUTDOOR DAN HIASAN_17: 1134192084
+      LANTAI OUTDOOR DAN HIASAN_18: -456878204
+      LANTAI OUTDOOR DAN HIASAN_19: 1832296123
+      LANTAI OUTDOOR DAN HIASAN_2: -1567781489
+      LANTAI OUTDOOR DAN HIASAN_20: 550665738
+      LANTAI OUTDOOR DAN HIASAN_21: 873707328
+      LANTAI OUTDOOR DAN HIASAN_22: 1591920968
+      LANTAI OUTDOOR DAN HIASAN_23: 1353166784
+      LANTAI OUTDOOR DAN HIASAN_24: -1246921233
+      LANTAI OUTDOOR DAN HIASAN_25: -1549052954
+      LANTAI OUTDOOR DAN HIASAN_26: -1390998287
+      LANTAI OUTDOOR DAN HIASAN_27: 1311907747
+      LANTAI OUTDOOR DAN HIASAN_28: 633873106
+      LANTAI OUTDOOR DAN HIASAN_29: 1926240966
+      LANTAI OUTDOOR DAN HIASAN_3: -1689691412
+      LANTAI OUTDOOR DAN HIASAN_30: -280709305
+      LANTAI OUTDOOR DAN HIASAN_31: -1990659440
+      LANTAI OUTDOOR DAN HIASAN_32: 1877379725
+      LANTAI OUTDOOR DAN HIASAN_33: 636512428
+      LANTAI OUTDOOR DAN HIASAN_34: 911139380
+      LANTAI OUTDOOR DAN HIASAN_35: -1452489886
+      LANTAI OUTDOOR DAN HIASAN_36: -422744434
+      LANTAI OUTDOOR DAN HIASAN_37: 1671600434
+      LANTAI OUTDOOR DAN HIASAN_38: -1149805857
+      LANTAI OUTDOOR DAN HIASAN_39: -1800502237
+      LANTAI OUTDOOR DAN HIASAN_4: -397600028
+      LANTAI OUTDOOR DAN HIASAN_40: -52007814
+      LANTAI OUTDOOR DAN HIASAN_41: -507583002
+      LANTAI OUTDOOR DAN HIASAN_42: -498996773
+      LANTAI OUTDOOR DAN HIASAN_43: -43337618
+      LANTAI OUTDOOR DAN HIASAN_44: 716720102
+      LANTAI OUTDOOR DAN HIASAN_45: -1273512488
+      LANTAI OUTDOOR DAN HIASAN_46: 693344921
+      LANTAI OUTDOOR DAN HIASAN_47: -1009913708
+      LANTAI OUTDOOR DAN HIASAN_48: 79500817
+      LANTAI OUTDOOR DAN HIASAN_49: 244391031
+      LANTAI OUTDOOR DAN HIASAN_5: -2097252550
+      LANTAI OUTDOOR DAN HIASAN_50: -567664713
+      LANTAI OUTDOOR DAN HIASAN_6: 420062908
+      LANTAI OUTDOOR DAN HIASAN_7: 1615960619
+      LANTAI OUTDOOR DAN HIASAN_8: 1727271890
+      LANTAI OUTDOOR DAN HIASAN_9: -1131491294
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
