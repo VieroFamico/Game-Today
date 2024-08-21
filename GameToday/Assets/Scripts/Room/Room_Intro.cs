@@ -8,6 +8,8 @@ public class Room_Intro : Base_Room
     public Collider2D crossTheDoorCollider;
     public Animator exitDoorAnimator;
 
+    public Dialog introDialog;
+
     public Base_Room prevRoom;
     public Base_Room nextRoom;
 
@@ -67,13 +69,15 @@ public class Room_Intro : Base_Room
     {
         playerGotDialog = true;
         OpenExitDoor();
+
+        DialogManager.instance.StartDialog(introDialog);
     }
 
     private void PlayerCrossToNextRoom()
     {
         CloseExitDoor();
         playerCrossedToNextRoom = true;
-        Invoke("Destroy(this)", 5f);
+        Destroy(this, 5f);
     }
 
     public void OpenExitDoor()

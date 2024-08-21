@@ -15,9 +15,12 @@ public class StateManager_Player : MonoBehaviour
     public PlayerState state;
 
     public bool isMoving;
+    public bool isAbleToMove = true;
     public bool isDashing;
+    public bool isAbleToDash = true;
     public bool isAttacking;
     public bool isInHarmonyState;
+    public bool isAbleToHarmonyState = false;
 
     public int currentRoom;
     private void Awake()
@@ -32,10 +35,9 @@ public class StateManager_Player : MonoBehaviour
         }
         
     }
-    // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public PlayerState GetState()

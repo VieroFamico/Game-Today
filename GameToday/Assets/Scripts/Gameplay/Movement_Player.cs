@@ -35,17 +35,23 @@ public class Movement_Player : MonoBehaviour
 
     void Update()
     {
-        GetMoveInput();
-
+        if(StateManager_Player.instance.isAbleToMove)
+        {
+            GetMoveInput();
+            
+        }
         DashCooldown();
     }
 
     void FixedUpdate()
     {
-        if (!isDashing)
+        if (StateManager_Player.instance.isAbleToMove)
         {
-            Movement();
-            Dash();
+            if (!isDashing)
+            {
+                Movement();
+                GetDashInput();
+            }
         }
     }
     #region Input and Movement
@@ -73,7 +79,7 @@ public class Movement_Player : MonoBehaviour
 
     #region Dash
 
-    private void Dash()
+    private void GetDashInput()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift) && !isDashing && currDashAmount > 0)
         {
