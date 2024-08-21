@@ -5,7 +5,7 @@ using UnityEngine;
 public class Entities : MonoBehaviour
 {
     public int maxHP = 100;
-    public int currentHP;
+    [HideInInspector] public int currentHP;
 
     public virtual void Start()
     {

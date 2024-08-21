@@ -1,26 +1,16 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Attacking_Player : MonoBehaviour
 {
-    [Header("References")]
-    public List<AudioClip> BA_AudioClips;
-    public AudioSource playerAudioSource;
-    public Collider2D attackCollider;
-    public Transform swordTransform;
-
-    private Animator playerAnimator;
-    private Animator swordAnimator;
-
-    [Header("Variables")]
+    public Collider2D attack1Collider;
     public float BA_PushForce;
     public float BA_CancelDuration; //BA = basic attack
     public float BA_Duration;
     public int damage;
 
-    
+    private Animator animator;
 
     private Vector2 attackTargetPos;
     private int attackStage = 0;
@@ -28,8 +18,7 @@ public class Attacking_Player : MonoBehaviour
 
     void Start()
     {
-        playerAnimator = GetComponent<Animator>();
-        swordAnimator = swordTransform.GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -55,13 +44,11 @@ public class Attacking_Player : MonoBehaviour
 
         if (StateManager_Player.instance.isAttacking)
         {
-            playerAnimator.SetBool("Attacking", true);
-            swordAnimator.SetBool("Attacking", true);
+            animator.SetBool("Attacking", true);
         }
         else
         {
-            playerAnimator.SetBool("Attacking", false);
-            swordAnimator.SetBool("Attacking", false);
+            animator.SetBool("Attacking", false);
         }
     }
 
@@ -70,9 +57,6 @@ public class Attacking_Player : MonoBehaviour
         if(attackStage == 0)
         {
             AnimateBasicAttack(attackStage);
-
-            PlayBASound(attackStage);
-
             attackStage++;
 
             currBACancelDuration = 0f;
@@ -83,9 +67,6 @@ public class Attacking_Player : MonoBehaviour
         else if(attackStage == 1)
         {
             AnimateBasicAttack(attackStage);
-
-            PlayBASound(attackStage);
-
             attackStage++;
 
             currBACancelDuration = 0f;
@@ -96,9 +77,6 @@ public class Attacking_Player : MonoBehaviour
         else if (attackStage == 2)
         {
             AnimateBasicAttack(attackStage);
-
-            PlayBASound(attackStage);
-
             attackStage++;
 
             currBACancelDuration = 0f;
@@ -113,40 +91,30 @@ public class Attacking_Player : MonoBehaviour
 
         yield return new WaitForSeconds(BA_Duration/2);
 
-        RaycastHit2D[] raycastHit2D = Physics2D.BoxCastAll(attackCollider.transform.position, attackCollider.bounds.size * 1.5f, 0f, attackCollider.transform.forward);
+        RaycastHit2D[] raycastHit2D = Physics2D.BoxCastAll(attack1Collider.transform.position, attack1Collider.bounds.size, 0f, attack1Collider.transform.forward);
 
         foreach (RaycastHit2D hit in raycastHit2D)
         {
-            Entities entity = hit.collider.gameObject.GetComponent<Base_Enemy>();
+            Entities entity = hit.collider.gameObject.GetComponent<Player_Entity>();
 
             if (entity)
             {
                 entity.TakeDamage(damage);
-                Debug.Log(entity);
+                
+            }
+
+            entity = hit.collider.gameObject.GetComponent<Pillar_Entity>();
+
+            if (entity)
+            {
+                entity.TakeDamage(damage);
+
             }
         }
 
         yield return new WaitForSeconds(BA_Duration / 2);
 
         StateManager_Player.instance.isAttacking = false;
-    }
-
-    private void PlayBASound(int index)
-    {
-        if (BA_AudioClips.Count <= 0)
-        {
-            return;
-        }
-        if (BA_AudioClips[index])
-        {
-            if (playerAudioSource.isPlaying)
-            {
-                playerAudioSource.Stop();
-            }
-
-            playerAudioSource.clip = BA_AudioClips[index];
-            playerAudioSource.Play();
-        }
     }
 
     private void AnimateBasicAttack(int attackStage)
@@ -157,59 +125,7 @@ public class Attacking_Player : MonoBehaviour
 
         float tempVectorDistance = (attackStage + 1) * 0.1f;
 
-        Vector3 diff = attackVector - (Vector2)transform.position;
-        float f = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-        
-        
-
-        if (MathF.Abs(direction.x) >= MathF.Abs(direction.y))
-        {
-            Quaternion rot = Quaternion.LookRotation(direction);
-            if (direction.x > 0)
-            {
-                //Right
-                attackCollider.transform.rotation = Quaternion.Euler(0, 0, f);
-                swordTransform.rotation = Quaternion.Euler(0, 0, f);
-
-            }
-            else
-            {
-                //Left
-                attackCollider.transform.rotation = Quaternion.Euler(0, 0, f);
-                swordTransform.rotation = Quaternion.Euler(0, 0, f - 180f);
-
-            }
-            Debug.Log(rot.eulerAngles);
-            swordTransform.position = (Vector2)transform.position + (direction * 0.4f);
-            
-        }
-        else
-        {
-            Quaternion rot = Quaternion.LookRotation(direction);
-            if (direction.y > 0)
-            {
-                //Up
-                attackCollider.transform.rotation = Quaternion.Euler(0, 0, f);
-                swordTransform.rotation = Quaternion.Euler(0, 0, f - 90f);
-
-            }
-            else
-            {
-                //Down
-                attackCollider.transform.rotation = Quaternion.Euler(0, 0, f);
-                swordTransform.rotation = Quaternion.Euler(0, 0, f - 270f);
-
-            }
-            Debug.Log(rot.eulerAngles);
-            swordTransform.position = (Vector2)transform.position + (direction * 0.6f);
-        }
-
-        playerAnimator.SetFloat("HorizontalAttackDirection", direction.x * tempVectorDistance);
-        playerAnimator.SetFloat("VerticalAttackDirection", direction.y * tempVectorDistance);
-
-        swordAnimator.SetFloat("HorizontalAttackDirection", direction.x * tempVectorDistance);
-        swordAnimator.SetFloat("VerticalAttackDirection", direction.y * tempVectorDistance);
-
-
+        animator.SetFloat("HorizontalAttackDirection", direction.x * tempVectorDistance);
+        animator.SetFloat("VerticalAttackDirection", direction.y * tempVectorDistance);
     }
 }
