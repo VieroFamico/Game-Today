@@ -23,7 +23,7 @@ public class Movement_Player : MonoBehaviour
 
     private float currDashCooldown = 0f;
     private int currDashAmount = 0;
-    private bool isDashing;
+    public bool isDashing { get { return StateManager_Player.instance.isDashing; } set { StateManager_Player.instance.isDashing = value; } }
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -35,21 +35,23 @@ public class Movement_Player : MonoBehaviour
 
     void Update()
     {
-        if(StateManager_Player.instance.isAbleToMove)
+        GetMoveInput();
+
+        if (!StateManager_Player.instance.isAbleToMove)
         {
-            GetMoveInput();
-            
+            StopCoroutine(DashProcess());
         }
+
         DashCooldown();
     }
 
     void FixedUpdate()
     {
-        if (StateManager_Player.instance.isAbleToMove)
+        if (!isDashing)
         {
-            if (!isDashing)
+            Movement(moveVector2);
+            if (StateManager_Player.instance.isAbleToDash)
             {
-                Movement();
                 GetDashInput();
             }
         }
@@ -57,6 +59,14 @@ public class Movement_Player : MonoBehaviour
     #region Input and Movement
     private void GetMoveInput()
     {
+        if (!StateManager_Player.instance.isAbleToMove)
+        {
+            moveVector2 = Vector2.zero;
+            AnimateMovement(moveVector2);
+            StateManager_Player.instance.isMoving = false;
+            return;
+        }
+
         float xMovement = Input.GetAxisRaw("Horizontal");
         float yMovement = Input.GetAxisRaw("Vertical");
 
@@ -65,15 +75,17 @@ public class Movement_Player : MonoBehaviour
         if(moveVector2.magnitude < 0.1f)
         {
             AnimateMovement(lastMoveVector2 * 0.1f);
+            StateManager_Player.instance.isMoving = false;
             return;
         }
         lastMoveVector2 = moveVector2;
         AnimateMovement(moveVector2);
+        StateManager_Player.instance.isMoving = true;
     }
 
-    private void Movement()
+    private void Movement(Vector2 moveInputVector)
     {
-        rb2d.MovePosition((Vector2)transform.position + moveVector2 * moveSpeed * Time.deltaTime);
+        rb2d.MovePosition((Vector2)transform.position + moveInputVector * moveSpeed * Time.deltaTime);
     }
     #endregion
 
@@ -81,7 +93,7 @@ public class Movement_Player : MonoBehaviour
 
     private void GetDashInput()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && !isDashing && currDashAmount > 0)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !isDashing && currDashAmount > 0 && StateManager_Player.instance.isAbleToDash)
         {
             StartCoroutine(DashProcess());
 
@@ -142,7 +154,5 @@ public class Movement_Player : MonoBehaviour
         animator.SetFloat("Horizontal", moveVector.x);
         animator.SetFloat("Vertical", moveVector.y);
     }
-
-
     #endregion
 }

@@ -30,6 +30,6 @@ public class Entities : MonoBehaviour
     
     public virtual void Dead()
     {
-
+        StateManager_Player.instance.isDead = true;
     }
 }

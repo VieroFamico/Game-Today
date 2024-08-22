@@ -15,11 +15,13 @@ public class Room_Intro : Base_Room
 
     private bool playerGotDialog;
     private bool playerCrossedToNextRoom;
+    public bool dialogCompleted = false;
     public override void Start()
     {
         base.Start();
-    }
+        DialogManager.instance.dialogEnded.AddListener(OnDialogEnded);
 
+    }
 
     void Update()
     {
@@ -71,14 +73,33 @@ public class Room_Intro : Base_Room
         OpenExitDoor();
 
         DialogManager.instance.StartDialog(introDialog);
+        dialogCompleted = false;
     }
 
     private void PlayerCrossToNextRoom()
     {
         CloseExitDoor();
         playerCrossedToNextRoom = true;
+        CompleteThisRoom();
         Destroy(this, 5f);
     }
+
+    private void OnDialogEnded()
+    {
+        if (playerGotDialog)
+        {
+            dialogCompleted = true;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (DialogManager.instance != null)
+        {
+            DialogManager.instance.dialogEnded.RemoveListener(OnDialogEnded);
+        }
+    }
+
 
     public void OpenExitDoor()
     {

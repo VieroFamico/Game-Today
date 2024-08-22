@@ -40,7 +40,7 @@ public class Attacking_Player : MonoBehaviour
 
     private void GetAttackInput()
     {
-        if (Input.GetMouseButtonDown(0) && !StateManager_Player.instance.isAttacking)
+        if (Input.GetMouseButtonDown(0) && !StateManager_Player.instance.isAttacking && StateManager_Player.instance.isAbleToAttack)
         {
             attackTargetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Attack();
@@ -159,7 +159,6 @@ public class Attacking_Player : MonoBehaviour
 
         Vector3 diff = attackVector - (Vector2)transform.position;
         float f = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-        
         
 
         if (MathF.Abs(direction.x) >= MathF.Abs(direction.y))

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
@@ -17,7 +18,8 @@ public class DialogManager : MonoBehaviour
     private Queue<string> sentences;
     private string sentenceBeingTyped;
     private bool isTyping = false;
-
+    public bool playingDialog = false;
+    public UnityEvent dialogEnded;
     private void Awake()
     {
         if(instance == null)
@@ -28,6 +30,11 @@ public class DialogManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (dialogEnded == null)
+        {
+            dialogEnded = new UnityEvent();
+        }
     }
     void Start()
     {
@@ -36,8 +43,13 @@ public class DialogManager : MonoBehaviour
 
     public void StartDialog(Dialog dialog)
     {
+        playingDialog = true;
         animator.SetBool("IsShowing", true);
         //nameText.text = dialog.name;
+        if(dialog.stopPlayerDuringDialog)
+        {
+            StateManager_Player.instance.SetMoving_Dashing_Attacking(false, false, false);
+        }
 
         sentences.Clear();
 
@@ -50,19 +62,19 @@ public class DialogManager : MonoBehaviour
     }
     IEnumerator DelayUntilStart()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0f);
         DisplayNextSentence();
     }
     public void DisplayNextSentence()
     {
-        if (isTyping)
+        /*if (isTyping)
         {
             StopAllCoroutines();
             dialogText.text = sentenceBeingTyped;
             isTyping = false;
             sentenceBeingTyped = "";
             return;
-        }
+        }*/
 
         if (sentences.Count == 0)
         {
@@ -96,5 +108,11 @@ public class DialogManager : MonoBehaviour
     {
         dialogText.text = "";
         animator.SetBool("IsShowing", false);
+
+        playingDialog = false;
+        
+        StateManager_Player.instance.SetMoving_Dashing_Attacking(true, true, true);
+
+        dialogEnded.Invoke();
     }
 }

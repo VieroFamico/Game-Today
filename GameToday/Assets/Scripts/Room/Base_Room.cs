@@ -6,6 +6,13 @@ public class Base_Room : MonoBehaviour
 {
     public List<Pillar_Entity> roomPillars;
     public int roomNumber;
+    public enum RoomType
+    {
+        Combat,
+        Puzzle,
+    }
+
+    public RoomType roomType;
 
     public virtual void Awake()
     {
@@ -31,7 +38,7 @@ public class Base_Room : MonoBehaviour
         return roomPillars;
     }
 
-    public void CheckPillarCharged()
+    public virtual void CheckPillarCharged()
     {
         bool allIsCharged = true;
         foreach (Pillar_Entity pillar_Entity in roomPillars)
@@ -55,6 +62,6 @@ public class Base_Room : MonoBehaviour
 
     public virtual void CompleteThisRoom()
     {
-
+        StateManager_Player.instance.currentRoom = roomNumber;
     }
 }
