@@ -47,7 +47,7 @@ public class Movement_Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!isDashing)
+        if (!isDashing && StateManager_Player.instance.isAbleToMove)
         {
             Movement(moveVector2);
             if (StateManager_Player.instance.isAbleToDash)

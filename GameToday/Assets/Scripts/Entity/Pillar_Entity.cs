@@ -1,14 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Pillar_Entity : Entities
 {
+    [Header("References")]
+    public Slider currFillPercentage;
+    public Slider activationPercentage;
     public Base_Room room;
+
+
     public float maxFillPercentage = 25f;
     public float fillRate = 1f;
     public float activateDistance;
-    public float activateRate;
+    public float activateTimeNeeded;
     public bool isActive;
     public bool isCharged { get; private set;}
 
@@ -19,6 +25,7 @@ public class Pillar_Entity : Entities
     {
         currentHP = maxHP;
         player = FindAnyObjectByType<Player_Entity>();
+        UpdateSlidersVisibility();
     }
 
     // Update is called once per frame
@@ -32,6 +39,8 @@ public class Pillar_Entity : Entities
         {
             GetPlayerActivatingInput();
         }
+
+        UpdateSliders();
     }
     private void Charge()
     {
@@ -41,6 +50,7 @@ public class Pillar_Entity : Entities
         {
             isCharged = true;
             room.CheckPillarCharged();
+            Deactivate(); 
         }
     }
     public override void TakeDamage(int damage)
@@ -67,7 +77,7 @@ public class Pillar_Entity : Entities
 
     private void GetPlayerActivatingInput()
     {
-        if (Vector2.Distance(transform.position, player.transform.position) < activateDistance)
+        if (Vector2.Distance(transform.position, player.transform.position) < activateDistance && !isCharged)
         {
             if (Input.GetKey(KeyCode.E))
             {
@@ -78,6 +88,34 @@ public class Pillar_Entity : Entities
     }
     public void Activating()
     {
-        currActivatePercentage += activateRate * Time.deltaTime;
+        currActivatePercentage += Time.deltaTime;
+
+        if (currActivatePercentage >= activateTimeNeeded)
+        {
+            isActive = true;
+            currActivatePercentage = 0;
+            UpdateSlidersVisibility();
+            currentHP = maxHP;
+            UpdateHealthSlider();
+        }
     }
+
+    private void UpdateSliders()
+    {
+        if (isActive)
+        {
+            currFillPercentage.value = currActivatePercentage / maxFillPercentage;
+        }
+        else
+        {
+            activationPercentage.value = currActivatePercentage / activateTimeNeeded;
+        }
+    }
+
+    private void UpdateSlidersVisibility()
+    {
+        currFillPercentage.gameObject.SetActive(isActive);
+        activationPercentage.gameObject.SetActive(!isActive);
+    }
+
 }

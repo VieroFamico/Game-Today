@@ -34,7 +34,6 @@ public class Item_Container : MonoBehaviour
             if (Input.GetKey(KeyCode.E))
             {
                 PickUp();
-
             }
         }
     }

@@ -27,7 +27,6 @@ public class Base_Room : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         

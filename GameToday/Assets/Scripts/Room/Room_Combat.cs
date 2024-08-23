@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Room_Combat : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public bool isActive;
+    
     void Start()
     {
         

@@ -19,7 +19,7 @@ public class Room_Puzzle_Addition : MonoBehaviour
     public float flickerSpeed = 0.1f; // The speed of the flicker
     private bool isFlickering = false; // To track if the flicker is currently happening
 
-
+    public Item_Container itemToDisplay;
     public Item_Container[] items;
 
     private AudioSource puzzleAudioSource;
@@ -135,6 +135,7 @@ public class Room_Puzzle_Addition : MonoBehaviour
         puzzleAudioSource.Stop();
         roomLight.enabled = true; // Keep the light on
         puzzleStarted = false;
+        ItemDisplay_Manager.instance.ShowItem(itemToDisplay.itemSO);
 
         // TODO: Implement door opening logic
     }

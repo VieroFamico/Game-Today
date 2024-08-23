@@ -122,6 +122,9 @@ public class Attacking_Player : MonoBehaviour
             if (entity)
             {
                 entity.TakeDamage(damage);
+
+                Vector2 dir = (entity.transform.position - transform.position).normalized;
+                entity.GetComponent<Base_Enemy>().KnockBack(dir);
                 Debug.Log(entity);
             }
         }
@@ -208,7 +211,5 @@ public class Attacking_Player : MonoBehaviour
 
         swordAnimator.SetFloat("HorizontalAttackDirection", direction.x * tempVectorDistance);
         swordAnimator.SetFloat("VerticalAttackDirection", direction.y * tempVectorDistance);
-
-
     }
 }
