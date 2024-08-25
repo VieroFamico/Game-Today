@@ -46,6 +46,11 @@ public class Puzzle_Room_Module : MonoBehaviour
             StartPuzzle();
         }
 
+        if (!puzzleStarted)
+        {
+            return;
+        }
+
         if (musicStopped)
         {
             if ((PlayerState_Manager.instance.isMoving || PlayerState_Manager.instance.isAttacking || PlayerState_Manager.instance.isDashing) && 
