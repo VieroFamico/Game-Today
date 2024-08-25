@@ -138,7 +138,7 @@ public class Base_Enemy : Entities
                 Vector2 dir = (entity.transform.position - transform.position).normalized;
 
                 entity.GetComponent<Player_Entity>().KnockBack(dir);
-                Debug.Log("hit");
+                Debug.Log("Hit Player");
                 yield return new WaitForSeconds(timeLeft);
                 break;
             }
@@ -147,8 +147,10 @@ public class Base_Enemy : Entities
 
             if (entity)
             {
+                Debug.Log("Hit Pillar");
                 entity.TakeDamage(damage);
                 yield return new WaitForSeconds(timeLeft);
+                
                 break;
             }
         }

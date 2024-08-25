@@ -76,5 +76,4 @@ public class Entities : MonoBehaviour
             healthSlider.gameObject.SetActive(true);
         }
     }
-
 }

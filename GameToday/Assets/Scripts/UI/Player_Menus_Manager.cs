@@ -26,7 +26,14 @@ public class Player_Menus_Manager : MonoBehaviour
     public Button exitToMenuButton;
     [Header("Pause Menu References")]
     public Animator pauseMenu;
+    public Button pauseMenuButton;
+    public Button resumeButton;
+    public Button restartButton;
+    public Button exitToMainMenuButton;
 
+    private bool inMainMenu = true;
+    private bool isPaused = false;
+    private bool isDied = false;
 
     public float panelFadeDuration = 0.5f;
     private void Awake()
@@ -49,7 +56,10 @@ public class Player_Menus_Manager : MonoBehaviour
         exitGameButton.onClick.AddListener(ExitGame);
 
         skipIntroDialog.onClick.AddListener(DialogManager.instance.DisplayNextIntroSentence);
-        //retryButton.onClick.AddListener(Restart);
+
+        pauseMenuButton.onClick.AddListener(TogglePause);
+        resumeButton.onClick.AddListener(TogglePause);
+        restartButton.onClick.AddListener(Restart);
 
 
         mainMenu.gameObject.SetActive(true);
@@ -57,17 +67,15 @@ public class Player_Menus_Manager : MonoBehaviour
 
     void Update()
     {
-
-    }
-
-    public void ShowDeathMenu()
-    {
-        deathMenu.SetTrigger("Show");
-    }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            TogglePause();
+        }
+    } 
 
     public void Restart()
     {
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        Scene_Nav_Manager.instance.Restart();
     }
 
     public void GoToMainMenu()
@@ -79,27 +87,27 @@ public class Player_Menus_Manager : MonoBehaviour
     {
 
     }
+    
+    
+
+    #region StartGame
     private void CloseMainMenu()
     {
         mainMenu.SetTrigger("Close");
         StartCoroutine(TurnOffPanelAfterDelay(mainMenuImage));
         DialogManager.instance.StartIntroDialog(introDialog);
+        inMainMenu = false;
 
     }
-
     private void OnIntroDialogEnded()
     {
         StartCoroutine(TurnOffPanelAfterDelay(dialogBackground));
         InitializePlayer();
     }
-
     public void InitializePlayer()
     {
         PlayerState_Manager.instance.InitializePlayer();
     }
-
-    #region StartGame
-
     #endregion
 
     #region Exit Game
@@ -108,6 +116,51 @@ public class Player_Menus_Manager : MonoBehaviour
         Application.Quit();
     }
     #endregion
+
+    #region Pause Menu
+
+    private void TogglePause()
+    {
+        if (isDied)
+        {
+            return;
+        }
+
+        if(!isPaused)
+        {
+            Pause();
+
+        }
+        else
+        {
+            UnPause();
+        }
+    }
+
+    private void Pause()
+    {
+        pauseMenu.SetTrigger("Show");
+        isPaused = true;
+        pauseMenuButton.gameObject.SetActive(false);
+    }
+    private void UnPause()
+    {
+        pauseMenu.SetTrigger("Hide");
+        isPaused = false;
+        pauseMenuButton.gameObject.SetActive(true);
+    }
+
+    #endregion
+
+    public void ShowDeathMenu()
+    {
+        if(isPaused)
+        {
+            UnPause();
+        }
+        deathMenu.SetTrigger("Show");
+        isDied = true;
+    }
 
     #region Animation/Visual
     private IEnumerator TurnOffPanelAfterDelay(Image image)

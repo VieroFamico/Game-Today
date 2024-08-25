@@ -23,6 +23,7 @@ public class Player_Entity : Entities
         base.Dead();
         TakeDamage(currentHP);
         PlayerState_Manager.instance.isDead = true;
+        Player_Menus_Manager.instance.ShowDeathMenu();
     }
 
     public void KnockBack(Vector2 knockBackDirection)

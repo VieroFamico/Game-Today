@@ -11,7 +11,6 @@ public class Pillar_Entity : Entities
     public Base_Room room;
     public Combat_Room_Module combatRoom;
 
-
     public float maxFillPercentage = 25f;
     public float fillRate = 1f;
     public float activateDistance;
@@ -21,7 +20,8 @@ public class Pillar_Entity : Entities
 
     private Player_Entity player;
 
-    private float currActivatePercentage; 
+    private float currChargePercentage = 0;
+    private float currActivatePercentage = 0;
     public override void Start()
     {
         currentHP = maxHP;
@@ -45,13 +45,12 @@ public class Pillar_Entity : Entities
     }
     private void Charge()
     {
-        currActivatePercentage += Time.deltaTime * fillRate;
+        currChargePercentage += Time.deltaTime * fillRate;
 
-        if(currActivatePercentage >= maxFillPercentage)
+        if(currChargePercentage >= maxFillPercentage)
         {
-            isCharged = true;
             combatRoom.CheckPillarCharged();
-            Deactivate(); 
+            FullyCharged();
         }
     }
     public override void TakeDamage(int damage)
@@ -83,6 +82,14 @@ public class Pillar_Entity : Entities
         isActive = true;
         UpdateSlidersVisibility();
     }
+
+    private void FullyCharged()
+    {
+        isCharged = true;
+        currentHP = maxHP;
+        isActive = false;
+    }
+
     private void Deactivate()
     {
         if(isActive) isActive = false;
@@ -97,7 +104,6 @@ public class Pillar_Entity : Entities
             if (Input.GetKey(KeyCode.E))
             {
                 Activating();
-                
             }
             else
             {
@@ -123,7 +129,7 @@ public class Pillar_Entity : Entities
     {
         if (isActive)
         {
-            currFillPercentage.value = currActivatePercentage / maxFillPercentage;
+            currFillPercentage.value = currChargePercentage / maxFillPercentage;
         }
         else
         {

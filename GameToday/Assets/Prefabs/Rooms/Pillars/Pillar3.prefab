@@ -66,8 +66,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0076999962, y: 0.34225, z: 0}
-    m_Extent: {x: 0.79639995, y: 0.72525, z: 0}
+    m_Center: {x: 0.004400015, y: 0.34390002, z: 0}
+    m_Extent: {x: 0.8068, y: 0.7275, z: 0}
   m_PointLightInnerAngle: 239.26
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.38146192
@@ -1290,7 +1290,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 1264370733
+  m_SortingLayerID: 746426889
   m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!114 &5435757688889011510
