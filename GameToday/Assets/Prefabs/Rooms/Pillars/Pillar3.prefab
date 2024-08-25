@@ -48,7 +48,7 @@ MonoBehaviour:
   m_LightType: 1
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.25
-  m_Color: {r: 0.5686275, g: 0, b: 0.9137255, a: 1}
+  m_Color: {r: 0, g: 0.9137255, b: 0.03452669, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -66,8 +66,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.004400015, y: 0.34390002, z: 0}
-    m_Extent: {x: 0.8068, y: 0.7275, z: 0}
+    m_Center: {x: 0.011750013, y: 0.34305, z: 0}
+    m_Extent: {x: 0.80114996, y: 0.72395, z: 0}
   m_PointLightInnerAngle: 239.26
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.38146192
@@ -192,10 +192,10 @@ MonoBehaviour:
   activationPercentage: {fileID: 131701303703891937}
   room: {fileID: 0}
   combatRoom: {fileID: 0}
-  maxFillPercentage: 25
+  maxFillPercentage: 30
   fillRate: 1
   activateDistance: 3
-  activateTimeNeeded: 5
+  activateTimeNeeded: 3
   isActive: 0
 --- !u!61 &9068805148644086949
 BoxCollider2D:
@@ -1193,7 +1193,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.25
-  m_Color: {r: 0.5686042, g: 0, b: 0.9150943, a: 1}
+  m_Color: {r: 0, g: 0.9137255, b: 0.13466083, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -1242,7 +1242,7 @@ GameObject:
   - component: {fileID: 5435757688889011510}
   - component: {fileID: 4196172686693431416}
   m_Layer: 0
-  m_Name: HealthBar_Canvas
+  m_Name: Bar_Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

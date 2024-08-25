@@ -20,10 +20,12 @@ public class Player_Entity : Entities
 
     public override void Dead()
     {
-        base.Dead();
-        TakeDamage(currentHP);
+        currentHP = 0;
+        UpdateHealthSlider();
         PlayerState_Manager.instance.isDead = true;
+        PlayerState_Manager.instance.DisablePlayer();
         Player_Menus_Manager.instance.ShowDeathMenu();
+        base.Dead();
     }
 
     public void KnockBack(Vector2 knockBackDirection)

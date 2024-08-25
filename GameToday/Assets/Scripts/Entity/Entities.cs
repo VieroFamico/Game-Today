@@ -42,8 +42,6 @@ public class Entities : MonoBehaviour
 
     public virtual void Dead()
     {
-        PlayerState_Manager.instance.isDead = true;
-
         if (healthSlider != null)
         {
             healthSlider.gameObject.SetActive(false);

@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 276067131144765914}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.17, y: -2.14, z: 0}
+  m_LocalPosition: {x: 0, y: -2.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_LightType: 1
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.25
-  m_Color: {r: 0.5686275, g: 0, b: 0.9137255, a: 1}
+  m_Color: {r: 0.9137255, g: 0, b: 0.77551854, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -66,8 +66,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -1.16755, y: 0.46035, z: 0}
-    m_Extent: {x: 0.79725003, y: 0.72945, z: 0}
+    m_Center: {x: -0.0073499978, y: 0.49230003, z: 0}
+    m_Extent: {x: 0.79785, y: 0.7199, z: 0}
   m_PointLightInnerAngle: 239.26
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.38146192
@@ -78,12 +78,12 @@ MonoBehaviour:
   m_ShapeLightFalloffSize: 0.5
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
-  - {x: -0.87228394, y: 0.48622704, z: 0}
-  - {x: -0.9490943, y: 0.69200706, z: 0}
-  - {x: -1.4222527, y: 0.6825733, z: 0}
-  - {x: -1.4732518, y: 0.49983025, z: 0}
-  - {x: -1.4023485, y: 0.23876, z: 0}
-  - {x: -0.92899084, y: 0.25163078, z: 0}
+  - {x: 0.29428864, y: 0.51468086, z: 0}
+  - {x: 0.21747828, y: 0.7204609, z: 0}
+  - {x: -0.25568008, y: 0.71102715, z: 0}
+  - {x: -0.30667925, y: 0.5282841, z: 0}
+  - {x: -0.23577595, y: 0.26721382, z: 0}
+  - {x: 0.23758173, y: 0.2800846, z: 0}
 --- !u!1 &1056107928899564206
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 4819855331295878064}
   - component: {fileID: 3379055752576695017}
   m_Layer: 0
-  m_Name: HealthBar_Canvas
+  m_Name: Bar_Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -542,7 +542,7 @@ Transform:
   m_GameObject: {fileID: 3496515669164473071}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.02, y: 1.71, z: 0}
+  m_LocalPosition: {x: 0.05, y: 1.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -564,7 +564,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.25
-  m_Color: {r: 0.5686042, g: 0, b: 0.9150943, a: 1}
+  m_Color: {r: 0.9137255, g: 0, b: 0.736561, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -891,10 +891,10 @@ MonoBehaviour:
   activationPercentage: {fileID: 1650193411437170337}
   room: {fileID: 0}
   combatRoom: {fileID: 0}
-  maxFillPercentage: 25
+  maxFillPercentage: 30
   fillRate: 1
   activateDistance: 3
-  activateTimeNeeded: 5
+  activateTimeNeeded: 3
   isActive: 0
 --- !u!61 &5595184570894796288
 BoxCollider2D:

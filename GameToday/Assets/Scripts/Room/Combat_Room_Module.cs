@@ -28,6 +28,10 @@ public class Combat_Room_Module : MonoBehaviour
         {
             ActivateRoom();
         }
+        else
+        {
+            CheckPillarCharged();
+        }
     }
 
     private void ActivateRoom()
@@ -49,11 +53,7 @@ public class Combat_Room_Module : MonoBehaviour
         bool allIsCharged = true;
         foreach (Pillar_Entity pillar_Entity in roomPillars)
         {
-            if (pillar_Entity.isCharged)
-            {
-                continue;
-            }
-            else
+            if (!pillar_Entity.isCharged)
             {
                 allIsCharged = false;
                 return;
@@ -71,7 +71,7 @@ public class Combat_Room_Module : MonoBehaviour
         isActive = false;
         foreach (Enemy_Spawner spawner in spawners)
         {
-            Destroy(spawner.gameObject, 2f);
+            Destroy(spawner, 2f);
         }
         room.CompleteThisRoom();
     }

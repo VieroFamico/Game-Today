@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -60,9 +61,14 @@ public class Player_Menus_Manager : MonoBehaviour
         pauseMenuButton.onClick.AddListener(TogglePause);
         resumeButton.onClick.AddListener(TogglePause);
         restartButton.onClick.AddListener(Restart);
+        exitToMainMenuButton.onClick.AddListener(Restart);
 
+        retryButton.onClick.AddListener(Restart);
+        exitToMenuButton.onClick.AddListener(Restart);
 
         mainMenu.gameObject.SetActive(true);
+        HideDeathMenu();
+        pauseMenuButton.gameObject.SetActive(false);
     }
 
     void Update()
@@ -70,6 +76,10 @@ public class Player_Menus_Manager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             TogglePause();
+        }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            ShowDeathMenu();
         }
     } 
 
@@ -107,6 +117,7 @@ public class Player_Menus_Manager : MonoBehaviour
     public void InitializePlayer()
     {
         PlayerState_Manager.instance.InitializePlayer();
+        pauseMenuButton.gameObject.SetActive(true);
     }
     #endregion
 
@@ -158,9 +169,34 @@ public class Player_Menus_Manager : MonoBehaviour
         {
             UnPause();
         }
+        pauseMenuButton.gameObject.SetActive(false);
+
+        deathMenu.gameObject.SetActive(true);
         deathMenu.SetTrigger("Show");
         isDied = true;
     }
+
+    public void HideDeathMenu()
+    {
+        deathMenu.gameObject.SetActive(false);
+        deathMenu.SetTrigger("Hide");
+        isDied = false;
+    }
+    #region Victory
+    public void TurnOnVictoryScene(Dialog dialog)
+    {
+        pauseMenuButton.gameObject.SetActive(false);
+        if (isPaused)
+        {
+            UnPause();
+        }
+        dialogBackground.gameObject.SetActive(true);
+        UnityEngine.Color color = dialogBackground.color;
+        color.a = 1;
+        dialogBackground.color = color;
+        DialogManager.instance.StartIntroDialog(dialog);
+    }
+    #endregion
 
     #region Animation/Visual
     private IEnumerator TurnOffPanelAfterDelay(Image image)
@@ -170,7 +206,7 @@ public class Player_Menus_Manager : MonoBehaviour
         float temp = 1f;
         float fadeRate = 1f / panelFadeDuration;
 
-        Color color = image.color;
+        UnityEngine.Color color = image.color;
 
         while (temp > 0f)
         {
@@ -189,4 +225,6 @@ public class Player_Menus_Manager : MonoBehaviour
         }
     }
     #endregion
+
+    
 }

@@ -48,9 +48,11 @@ public class Puzzle_Room_Module : MonoBehaviour
 
         if (musicStopped)
         {
-            if (PlayerState_Manager.instance.isMoving && PlayerState_Manager.instance.isAttacking && PlayerState_Manager.instance.isDashing && !PlayerState_Manager.instance.isDead)
+            if ((PlayerState_Manager.instance.isMoving || PlayerState_Manager.instance.isAttacking || PlayerState_Manager.instance.isDashing) && 
+                !PlayerState_Manager.instance.isDead)
             {
                 PlayerState_Manager.instance.player.Dead();
+                puzzleStarted = false;
             }
         }
 

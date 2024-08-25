@@ -51,6 +51,7 @@ public class Pillar_Entity : Entities
         {
             combatRoom.CheckPillarCharged();
             FullyCharged();
+            Debug.Log("FullyCharged");
         }
     }
     public override void TakeDamage(int damage)

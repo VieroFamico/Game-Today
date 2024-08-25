@@ -29,7 +29,7 @@ public class Room_Intro : Base_Room
 
     void Update()
     {
-        if (!playerGotDialog)
+        if (!playerGotDialog && !roomIsActive)
         {
             DetectPlayerGettingDialog();
             return;
@@ -79,9 +79,9 @@ public class Room_Intro : Base_Room
 
     private void PlayerCrossToNextRoom()
     {
+
         CloseExitDoor();
         playerCrossedToNextRoom = true;
-        CompleteThisRoom();
         roomLight.intensity = 0f;
         Destroy(this, 5f);
     }

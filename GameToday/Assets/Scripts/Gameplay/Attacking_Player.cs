@@ -181,7 +181,6 @@ public class Attacking_Player : MonoBehaviour
                 swordTransform.rotation = Quaternion.Euler(0, 0, f - 180f);
 
             }
-            Debug.Log(rot.eulerAngles);
             swordTransform.position = (Vector2)transform.position + (direction * 0.4f);
             
         }
@@ -202,7 +201,6 @@ public class Attacking_Player : MonoBehaviour
                 swordTransform.rotation = Quaternion.Euler(0, 0, f - 270f);
 
             }
-            Debug.Log(rot.eulerAngles);
             swordTransform.position = (Vector2)transform.position + (direction * 0.6f);
         }
 
