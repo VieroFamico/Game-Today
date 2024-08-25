@@ -39,5 +39,6 @@ public class Item_Container : MonoBehaviour
     {
         isPickedUp = true;
         puzzleRoomModule.CheckForItemsPickedUp();
+        Destroy(gameObject);
     }
 }

@@ -47,7 +47,6 @@ public class Room_Intro : Base_Room
         foreach (RaycastHit2D hit in raycastHit2D)
         {
             Entities entity = hit.collider.gameObject.GetComponent<Player_Entity>();
-            Debug.Log(entity);
             if (entity)
             {
                 PlayerGetIntroDialog();
