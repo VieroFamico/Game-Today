@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class Room_Intro : Base_Room
 {
+    [Header("References")]
     public Collider2D getDialogCollider;
     public Collider2D crossTheDoorCollider;
     public Animator exitDoorAnimator;
+    public Light2D roomLight;
 
     public Dialog introDialog;
 
@@ -36,7 +39,6 @@ public class Room_Intro : Base_Room
         {
             DetectPlayerCrossingDoor();
         }
-        
     }
 
     private void DetectPlayerGettingDialog()
@@ -71,7 +73,6 @@ public class Room_Intro : Base_Room
     private void PlayerGetIntroDialog()
     {
         playerGotDialog = true;
-        OpenExitDoor();
 
         DialogManager.instance.StartDialog(introDialog);
         dialogCompleted = false;
@@ -82,6 +83,7 @@ public class Room_Intro : Base_Room
         CloseExitDoor();
         playerCrossedToNextRoom = true;
         CompleteThisRoom();
+        roomLight.intensity = 0f;
         Destroy(this, 5f);
     }
 
@@ -105,6 +107,13 @@ public class Room_Intro : Base_Room
     public void ActivateRoom()
     {
         roomIsActive = true;
+
+        Combat_Room_Module combatRoom = GetComponent<Combat_Room_Module>();
+        Puzzle_Room_Module puzzleRoom = GetComponent<Puzzle_Room_Module>();
+        if(!combatRoom && !puzzleRoom)
+        {
+            CompleteThisRoom();
+        }
     }
 
     public void CompleteThisRoom()
@@ -112,6 +121,7 @@ public class Room_Intro : Base_Room
         PlayerState_Manager.instance.currentRoom = roomNumber;
         roomIsActive = false;
         roomIsCompleted = true;
+        OpenExitDoor();
     }
 
     public void OpenExitDoor()

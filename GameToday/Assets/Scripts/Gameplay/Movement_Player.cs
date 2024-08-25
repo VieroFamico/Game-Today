@@ -40,6 +40,7 @@ public class Movement_Player : MonoBehaviour
         if (!PlayerState_Manager.instance.isAbleToMove)
         {
             StopCoroutine(DashProcess());
+            rb2d.velocity = Vector2.zero;
         }
 
         DashCooldown();

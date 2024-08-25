@@ -26,7 +26,17 @@ public class Combat_Room_Module : MonoBehaviour
     {
         if (room.dialogCompleted && !isActive && !room.roomIsCompleted)
         {
-            isActive = true;
+            ActivateRoom();
+        }
+    }
+
+    private void ActivateRoom()
+    {
+        isActive = true;
+
+        foreach(Pillar_Entity pillar in roomPillars)
+        {
+            pillar.StartRoom();
         }
     }
     public List<Pillar_Entity> GetRoomPillars()

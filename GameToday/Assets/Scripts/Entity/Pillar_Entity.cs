@@ -57,6 +57,12 @@ public class Pillar_Entity : Entities
     public override void TakeDamage(int damage)
     {
         currentHP -= damage;
+
+        if (currentHP < maxHP && healthSlider != null && !healthSlider.gameObject.activeSelf)
+        {
+            ShowHealthSlider();
+        }
+
         if (currentHP <= 0)
         {
             currentHP = 0;
@@ -68,11 +74,19 @@ public class Pillar_Entity : Entities
         {
             currentHP = maxHP;
         }
+
+        UpdateHealthSlider();
     }
 
+    public void StartRoom()
+    {
+        isActive = true;
+        UpdateSlidersVisibility();
+    }
     private void Deactivate()
     {
         if(isActive) isActive = false;
+        UpdateSlidersVisibility();
     }
 
 
@@ -84,6 +98,10 @@ public class Pillar_Entity : Entities
             {
                 Activating();
                 
+            }
+            else
+            {
+                currActivatePercentage = 0f;
             }
         }
     }

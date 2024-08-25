@@ -157,7 +157,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 29904
+  m_InstanceId: -30490
   m_LocalBounds:
     m_Center: {x: -0.000000059604645, y: 0, z: 0}
     m_Extent: {x: 0.5, y: 0.5, z: 0}
@@ -262,7 +262,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3285b2b29ad4407498495ae78e37125e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomPillars: []
   roomNumber: 0
   roomType: 0
   getDialogCollider: {fileID: 8568037690392721663}
@@ -275,10 +274,12 @@ MonoBehaviour:
       with an otherworldly light. \r"
     - Compelled by an unseen force, I pursued this luminous trail, feeling as though
       it were the course I was fated to follow.
-    stopPlayerDuringDialog: 1
+    stopPlayerDuringDialog: 0
   prevRoom: {fileID: 0}
   nextRoom: {fileID: 0}
   dialogCompleted: 0
+  roomIsActive: 0
+  roomIsCompleted: 0
 --- !u!1 &4617481994268844841
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,7 +437,7 @@ MonoBehaviour:
   - {x: 0.49999994, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 29748
+  m_InstanceId: -30500
   m_LocalBounds:
     m_Center: {x: -0.000000029802322, y: 0, z: 0}
     m_Extent: {x: 0.49999997, y: 0.5, z: 0}

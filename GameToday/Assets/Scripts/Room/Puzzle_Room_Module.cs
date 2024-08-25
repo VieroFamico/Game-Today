@@ -94,7 +94,7 @@ public class Puzzle_Room_Module : MonoBehaviour
             {
                 // Red Light
                 currTime = Random.Range(songInactiveIntervalMin, songInactiveIntervalMax);
-                puzzleAudioSource.Stop();
+                puzzleAudioSource.Pause();
                 roomLight.enabled = true;
                 musicStopped = true;
             }
