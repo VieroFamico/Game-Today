@@ -44,6 +44,10 @@ public class PlayerState_Manager : MonoBehaviour
         }
         
     }
+    private void Start()
+    {
+        DisablePlayer();
+    }
     void Update()
     {
 

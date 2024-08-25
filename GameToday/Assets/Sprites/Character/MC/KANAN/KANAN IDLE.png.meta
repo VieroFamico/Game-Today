@@ -248,6 +248,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: KANAN IDLE_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1152
+        height: 192
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1a90de04d6cc274cae26b95e77adffc
+      internalID: 1852249311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -265,6 +286,7 @@ TextureImporter:
       KANAN IDLE_3: 1344785361
       KANAN IDLE_4: -1094074495
       KANAN IDLE_5: 1093837854
+      KANAN IDLE_6: 1852249311
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
