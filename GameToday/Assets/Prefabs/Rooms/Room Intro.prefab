@@ -157,7 +157,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -30490
+  m_InstanceId: -8648
   m_LocalBounds:
     m_Center: {x: -0.000000059604645, y: 0, z: 0}
     m_Extent: {x: 0.5, y: 0.5, z: 0}
@@ -267,6 +267,7 @@ MonoBehaviour:
   getDialogCollider: {fileID: 8568037690392721663}
   crossTheDoorCollider: {fileID: 7176343207086229272}
   exitDoorAnimator: {fileID: 3705536562542400312}
+  roomLight: {fileID: 8327131179965618935}
   introDialog:
     name: Being
     sentences:
@@ -274,7 +275,7 @@ MonoBehaviour:
       with an otherworldly light. \r"
     - Compelled by an unseen force, I pursued this luminous trail, feeling as though
       it were the course I was fated to follow.
-    stopPlayerDuringDialog: 0
+    stopPlayerDuringDialog: 1
   prevRoom: {fileID: 0}
   nextRoom: {fileID: 0}
   dialogCompleted: 0
@@ -437,7 +438,7 @@ MonoBehaviour:
   - {x: 0.49999994, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -30500
+  m_InstanceId: -8658
   m_LocalBounds:
     m_Center: {x: -0.000000029802322, y: 0, z: 0}
     m_Extent: {x: 0.49999997, y: 0.5, z: 0}
