@@ -23,7 +23,7 @@ public class Movement_Player : MonoBehaviour
 
     private float currDashCooldown = 0f;
     private int currDashAmount = 0;
-    public bool isDashing { get { return StateManager_Player.instance.isDashing; } set { StateManager_Player.instance.isDashing = value; } }
+    public bool isDashing { get { return PlayerState_Manager.instance.isDashing; } set { PlayerState_Manager.instance.isDashing = value; } }
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -37,7 +37,7 @@ public class Movement_Player : MonoBehaviour
     {
         GetMoveInput();
 
-        if (!StateManager_Player.instance.isAbleToMove)
+        if (!PlayerState_Manager.instance.isAbleToMove)
         {
             StopCoroutine(DashProcess());
         }
@@ -47,10 +47,10 @@ public class Movement_Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!isDashing && StateManager_Player.instance.isAbleToMove)
+        if (!isDashing && PlayerState_Manager.instance.isAbleToMove)
         {
             Movement(moveVector2);
-            if (StateManager_Player.instance.isAbleToDash)
+            if (PlayerState_Manager.instance.isAbleToDash)
             {
                 GetDashInput();
             }
@@ -59,11 +59,11 @@ public class Movement_Player : MonoBehaviour
     #region Input and Movement
     private void GetMoveInput()
     {
-        if (!StateManager_Player.instance.isAbleToMove)
+        if (!PlayerState_Manager.instance.isAbleToMove)
         {
             moveVector2 = Vector2.zero;
             AnimateMovement(moveVector2);
-            StateManager_Player.instance.isMoving = false;
+            PlayerState_Manager.instance.isMoving = false;
             return;
         }
 
@@ -75,12 +75,12 @@ public class Movement_Player : MonoBehaviour
         if(moveVector2.magnitude < 0.1f)
         {
             AnimateMovement(lastMoveVector2 * 0.1f);
-            StateManager_Player.instance.isMoving = false;
+            PlayerState_Manager.instance.isMoving = false;
             return;
         }
         lastMoveVector2 = moveVector2;
         AnimateMovement(moveVector2);
-        StateManager_Player.instance.isMoving = true;
+        PlayerState_Manager.instance.isMoving = true;
     }
 
     private void Movement(Vector2 moveInputVector)
@@ -93,7 +93,7 @@ public class Movement_Player : MonoBehaviour
 
     private void GetDashInput()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && !isDashing && currDashAmount > 0 && StateManager_Player.instance.isAbleToDash)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !isDashing && currDashAmount > 0 && PlayerState_Manager.instance.isAbleToDash)
         {
             StartCoroutine(DashProcess());
 

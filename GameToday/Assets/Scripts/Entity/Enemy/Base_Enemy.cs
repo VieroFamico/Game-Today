@@ -7,6 +7,7 @@ public class Base_Enemy : Entities
 {
     [Header("References")]
     public Base_Room room;
+    public Combat_Room_Module combatRoom;
     public Collider2D damageHitBox;
     public Animator attackAnimator;
     private Animator enemyAnimator;
@@ -40,8 +41,6 @@ public class Base_Enemy : Entities
         {
             TargetInRange();
         }
-
-
     }
 
     private void FixedUpdate()
@@ -60,7 +59,7 @@ public class Base_Enemy : Entities
         float distance = Vector2.Distance(transform.position, player.transform.position);
         target = player.transform;
 
-        List<Pillar_Entity> pillars = room.GetRoomPillars();
+        List<Pillar_Entity> pillars = combatRoom.GetRoomPillars();
 
         foreach(Pillar_Entity pillar in pillars)
         {

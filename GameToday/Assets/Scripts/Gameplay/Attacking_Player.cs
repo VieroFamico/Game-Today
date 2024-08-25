@@ -40,7 +40,7 @@ public class Attacking_Player : MonoBehaviour
 
     private void GetAttackInput()
     {
-        if (Input.GetMouseButtonDown(0) && !StateManager_Player.instance.isAttacking && StateManager_Player.instance.isAbleToAttack)
+        if (Input.GetMouseButtonDown(0) && !PlayerState_Manager.instance.isAttacking && PlayerState_Manager.instance.isAbleToAttack)
         {
             attackTargetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Attack();
@@ -53,7 +53,7 @@ public class Attacking_Player : MonoBehaviour
 
         currBACancelDuration += Time.deltaTime;
 
-        if (StateManager_Player.instance.isAttacking)
+        if (PlayerState_Manager.instance.isAttacking)
         {
             playerAnimator.SetBool("Attacking", true);
             swordAnimator.SetBool("Attacking", true);
@@ -109,7 +109,7 @@ public class Attacking_Player : MonoBehaviour
 
     private IEnumerator AttackingProcess()
     {
-        StateManager_Player.instance.isAttacking = true;
+        PlayerState_Manager.instance.isAttacking = true;
 
         yield return new WaitForSeconds(BA_Duration/2);
 
@@ -131,7 +131,7 @@ public class Attacking_Player : MonoBehaviour
 
         yield return new WaitForSeconds(BA_Duration / 2);
 
-        StateManager_Player.instance.isAttacking = false;
+        PlayerState_Manager.instance.isAttacking = false;
     }
 
     private void PlayBASound(int index)

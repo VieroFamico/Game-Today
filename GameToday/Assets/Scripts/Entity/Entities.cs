@@ -42,7 +42,7 @@ public class Entities : MonoBehaviour
 
     public virtual void Dead()
     {
-        StateManager_Player.instance.isDead = true;
+        PlayerState_Manager.instance.isDead = true;
 
         if (healthSlider != null)
         {

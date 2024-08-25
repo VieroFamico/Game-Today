@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Item_Container : MonoBehaviour
 {
-    public Room_Puzzle_Addition room;
+    public Puzzle_Room_Module puzzleRoomModule;
     public Base_Item_ScriptableObject itemSO;
 
     public float pickUpDistance;
@@ -16,10 +16,7 @@ public class Item_Container : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = itemSO.ItemSprite;
-
-        player = StateManager_Player.instance.player.transform;
+        player = PlayerState_Manager.instance.player.transform;
     }
 
     // Update is called once per frame
@@ -41,6 +38,6 @@ public class Item_Container : MonoBehaviour
     private void PickUp()
     {
         isPickedUp = true;
-        room.CheckForItemsPickedUp();
+        puzzleRoomModule.CheckForItemsPickedUp();
     }
 }

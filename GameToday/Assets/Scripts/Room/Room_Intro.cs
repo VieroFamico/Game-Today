@@ -16,11 +16,12 @@ public class Room_Intro : Base_Room
     private bool playerGotDialog;
     private bool playerCrossedToNextRoom;
     public bool dialogCompleted = false;
-    public override void Start()
-    {
-        base.Start();
-        DialogManager.instance.dialogEnded.AddListener(OnDialogEnded);
+    public bool roomIsActive = false;
+    public bool roomIsCompleted = false;
 
+    void Start()
+    {
+        DialogManager.instance.dialogEnded.AddListener(OnDialogEnded);
     }
 
     void Update()
@@ -89,6 +90,7 @@ public class Room_Intro : Base_Room
         if (playerGotDialog)
         {
             dialogCompleted = true;
+            ActivateRoom();
         }
     }
 
@@ -100,6 +102,17 @@ public class Room_Intro : Base_Room
         }
     }
 
+    public void ActivateRoom()
+    {
+        roomIsActive = true;
+    }
+
+    public void CompleteThisRoom()
+    {
+        PlayerState_Manager.instance.currentRoom = roomNumber;
+        roomIsActive = false;
+        roomIsCompleted = true;
+    }
 
     public void OpenExitDoor()
     {

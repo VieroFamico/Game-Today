@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Enemy_Spawner : MonoBehaviour
 {
-    public Room_Combat room;
+    public Combat_Room_Module combatRoomModule;
 
     public Transform spawnPoint;
 
@@ -20,10 +20,9 @@ public class Enemy_Spawner : MonoBehaviour
 
 
     private float currTime = 0f;
-
     void Update()
     {
-        if(!room.isActive)
+        if(!combatRoomModule.isActive)
         {
             return;
         }
@@ -44,6 +43,7 @@ public class Enemy_Spawner : MonoBehaviour
     private void Spawn(Base_Enemy enemy)
     {
         Base_Enemy spawnedEnemy = Instantiate(enemy, spawnPoint.position, Quaternion.identity, transform);
-
+        spawnedEnemy.room = combatRoomModule.room;
+        spawnedEnemy.combatRoom = combatRoomModule;
     }
 }

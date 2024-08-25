@@ -30,9 +30,11 @@ public class ItemDisplay_Manager : MonoBehaviour
     private void Start()
     {
         closeDisplayButton.onClick.AddListener(CloseDisplay);
+        CloseDisplay();
     }
     public void ShowItem(Base_Item_ScriptableObject itemToShow)
     {
+        showItemAnimator.gameObject.SetActive(true);
         showItemAnimator.SetTrigger("Show");
         itemName.text = itemToShow.name;
         itemDescription.text = itemToShow.itemDescription;
@@ -42,5 +44,11 @@ public class ItemDisplay_Manager : MonoBehaviour
     public void CloseDisplay()
     {
         showItemAnimator.SetTrigger("Hide");
+    }
+
+    private IEnumerator DisableDisplayPanelAfterDelay()
+    {
+        yield return new WaitForSeconds(0.5f);
+        showItemAnimator.gameObject.SetActive(false);
     }
 }

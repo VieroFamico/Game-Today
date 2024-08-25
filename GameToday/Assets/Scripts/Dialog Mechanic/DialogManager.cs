@@ -48,7 +48,7 @@ public class DialogManager : MonoBehaviour
         //nameText.text = dialog.name;
         if(dialog.stopPlayerDuringDialog)
         {
-            StateManager_Player.instance.SetMoving_Dashing_Attacking(false, false, false);
+            PlayerState_Manager.instance.SetMoving_Dashing_Attacking(false, false, false);
         }
 
         sentences.Clear();
@@ -111,7 +111,7 @@ public class DialogManager : MonoBehaviour
 
         playingDialog = false;
         
-        StateManager_Player.instance.SetMoving_Dashing_Attacking(true, true, true);
+        PlayerState_Manager.instance.SetMoving_Dashing_Attacking(true, true, true);
 
         dialogEnded.Invoke();
     }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player_Entity : Entities
 {
     private Rigidbody2D rb2d;
+     
 
     public override void Start()
     {
@@ -20,6 +21,8 @@ public class Player_Entity : Entities
     public override void Dead()
     {
         base.Dead();
+        TakeDamage(currentHP);
+        PlayerState_Manager.instance.isDead = true;
     }
 
     public void KnockBack(Vector2 knockBackDirection)
@@ -30,11 +33,11 @@ public class Player_Entity : Entities
 
     private IEnumerator KnockBackStun()
     {
-        StateManager_Player.instance.isAbleToMove = false;
+        PlayerState_Manager.instance.isAbleToMove = false;
 
         yield return new WaitForSeconds(0.1f);
 
-        StateManager_Player.instance.isAbleToMove = true;
+        PlayerState_Manager.instance.isAbleToMove = true;
         rb2d.velocity = Vector2.zero;
     }
 }

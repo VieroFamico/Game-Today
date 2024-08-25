@@ -9,6 +9,7 @@ public class Pillar_Entity : Entities
     public Slider currFillPercentage;
     public Slider activationPercentage;
     public Base_Room room;
+    public Combat_Room_Module combatRoom;
 
 
     public float maxFillPercentage = 25f;
@@ -49,7 +50,7 @@ public class Pillar_Entity : Entities
         if(currActivatePercentage >= maxFillPercentage)
         {
             isCharged = true;
-            room.CheckPillarCharged();
+            combatRoom.CheckPillarCharged();
             Deactivate(); 
         }
     }

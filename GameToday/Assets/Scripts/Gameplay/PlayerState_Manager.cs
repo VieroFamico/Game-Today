@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StateManager_Player : MonoBehaviour
+public class PlayerState_Manager : MonoBehaviour
 {
-    public static StateManager_Player instance;
+    public static PlayerState_Manager instance;
 
     public Player_Entity player;
     public enum PlayerState
@@ -47,6 +47,23 @@ public class StateManager_Player : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void InitializePlayer()
+    {
+        isAbleToMove = true;
+        isAbleToDash = true;
+        isAbleToAttack = true;
+        isAbleToHarmonyState = true;
+        isDead = false;
+    }
+
+    public void DisablePlayer()
+    {
+        isAbleToMove = false;
+        isAbleToDash = false;
+        isAbleToAttack = false;
+        isAbleToHarmonyState = false;
     }
 
     public PlayerState GetState()

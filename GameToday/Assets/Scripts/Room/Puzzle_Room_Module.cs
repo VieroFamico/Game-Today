@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-public class Room_Puzzle_Addition : MonoBehaviour
+public class Puzzle_Room_Module : MonoBehaviour
 {
     public Room_Intro room;
     public Light2D roomLight;
@@ -19,7 +19,7 @@ public class Room_Puzzle_Addition : MonoBehaviour
     public float flickerSpeed = 0.1f; // The speed of the flicker
     private bool isFlickering = false; // To track if the flicker is currently happening
 
-    public Item_Container itemToDisplay;
+    public Base_Item_ScriptableObject itemToDisplay;
     public Item_Container[] items;
 
     private AudioSource puzzleAudioSource;
@@ -35,23 +35,22 @@ public class Room_Puzzle_Addition : MonoBehaviour
 
         foreach (var item in items)
         {
-            item.room = this;
+            item.puzzleRoomModule = this;
         }
     }
 
     void Update()
     {
-        if (room.dialogCompleted && !puzzleStarted)
+        if (room.dialogCompleted && !puzzleStarted && room.roomIsActive)
         {
             StartPuzzle();
         }
 
         if (musicStopped)
         {
-            if (StateManager_Player.instance.isMoving && !StateManager_Player.instance.isDead)
+            if (PlayerState_Manager.instance.isMoving && !PlayerState_Manager.instance.isDead)
             {
-                StateManager_Player.instance.player.Dead();
-
+                PlayerState_Manager.instance.player.Dead();
             }
         }
 
@@ -135,9 +134,9 @@ public class Room_Puzzle_Addition : MonoBehaviour
         puzzleAudioSource.Stop();
         roomLight.enabled = true; // Keep the light on
         puzzleStarted = false;
-        ItemDisplay_Manager.instance.ShowItem(itemToDisplay.itemSO);
+        ItemDisplay_Manager.instance.ShowItem(itemToDisplay);
 
-        // TODO: Implement door opening logic
+        room.CompleteThisRoom();
     }
 
 }
