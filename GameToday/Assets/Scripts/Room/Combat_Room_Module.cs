@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Combat_Room_Module : MonoBehaviour
 {
     public bool isActive;
     public Room_Intro room;
+    public bool hasLoreItem;
+
+    public Base_Item_ScriptableObject itemToDisplay;
+    public Item_Container itemToDisplayOnPickUp;
 
     public List<Pillar_Entity> roomPillars;
     public Enemy_Spawner[] spawners;
@@ -20,17 +25,34 @@ public class Combat_Room_Module : MonoBehaviour
     void Start()
     {
         room = GetComponent<Room_Intro>();
+
+        if (hasLoreItem)
+        {
+            itemToDisplayOnPickUp.gameObject.SetActive(false);
+        }
     }
 
     void Update()
     {
+        if (hasLoreItem)
+        {
+            if (itemToDisplayOnPickUp.isPickedUp && !room.roomIsCompleted)
+            {
+                CompleteRoom();
+            }
+        }
+        
+
         if (room.dialogCompleted && !isActive && !room.roomIsCompleted)
         {
             ActivateRoom();
         }
         else
         {
-            CheckPillarCharged();
+            if(!room.roomIsCompleted)
+            {
+                CheckPillarCharged();
+            }
         }
     }
 
@@ -62,17 +84,38 @@ public class Combat_Room_Module : MonoBehaviour
 
         if (allIsCharged)
         {
-            CompleteRoom();
+            foreach (Enemy_Spawner spawner in spawners)
+            {
+                if (spawner)
+                {
+                    Destroy(spawner.gameObject);
+                }
+            }
+
+            if (hasLoreItem && itemToDisplayOnPickUp)
+            {
+                DropFinalItem();
+            }
+            else
+            {
+                CompleteRoom();
+            }
+            
         }
     }
-
+    public void DropFinalItem()
+    {
+        itemToDisplayOnPickUp.gameObject.SetActive(true);
+    }
     public void CompleteRoom()
     {
-        isActive = false;
-        foreach (Enemy_Spawner spawner in spawners)
+        if (hasLoreItem)
         {
-            Destroy(spawner, 2f);
+            Destroy(itemToDisplayOnPickUp.gameObject);
         }
+
+        isActive = false;
+        ItemDisplay_Manager.instance.ShowItem(itemToDisplay);
         room.CompleteThisRoom();
     }
 }

@@ -51,10 +51,10 @@ public class DialogManager : MonoBehaviour
     {
         playingDialog = true;
         animator.SetBool("IsShowing", true);
-        //nameText.text = dialog.name;
         if(dialog.stopPlayerDuringDialog)
         {
-            PlayerState_Manager.instance.SetMoving_Dashing_Attacking(false, false, false);
+            //PlayerState_Manager.instance.SetMoving_Dashing_Attacking(false, false, false);
+            PlayerState_Manager.instance.DisablePlayer();
         }
 
         sentences.Clear();
@@ -117,7 +117,8 @@ public class DialogManager : MonoBehaviour
 
         playingDialog = false;
         
-        PlayerState_Manager.instance.SetMoving_Dashing_Attacking(true, true, true);
+        //PlayerState_Manager.instance.SetMoving_Dashing_Attacking(true, true, true);
+        PlayerState_Manager.instance.EnablePlayer();
 
         dialogEnded.Invoke();
     }
@@ -130,7 +131,8 @@ public class DialogManager : MonoBehaviour
         //nameText.text = dialog.name;
         if (dialog.stopPlayerDuringDialog)
         {
-            PlayerState_Manager.instance.SetMoving_Dashing_Attacking(false, false, false);
+            //PlayerState_Manager.instance.SetMoving_Dashing_Attacking(false, false, false);
+            PlayerState_Manager.instance.DisablePlayer();
         }
 
         sentences.Clear();
@@ -188,7 +190,8 @@ public class DialogManager : MonoBehaviour
 
         playingDialog = false;
 
-        PlayerState_Manager.instance.SetMoving_Dashing_Attacking(true, true, true);
+        //PlayerState_Manager.instance.SetMoving_Dashing_Attacking(true, true, true);
+        PlayerState_Manager.instance.EnablePlayer();
 
         introDialogEnded.Invoke();
     }

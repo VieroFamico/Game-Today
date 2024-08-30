@@ -12,6 +12,7 @@ public class Movement_Player : MonoBehaviour
     private Animator animator;
 
     [Header("Variables")]
+    public float moveSpeedModifier;
     public float moveSpeed;
     public float dashSpeed;
     public int dashAmount;
@@ -41,6 +42,15 @@ public class Movement_Player : MonoBehaviour
         {
             StopCoroutine(DashProcess());
             rb2d.velocity = Vector2.zero;
+        }
+
+        if (PlayerState_Manager.instance.inHarmonyState)
+        {
+            moveSpeedModifier = 1.5f;
+        }
+        else
+        {
+            moveSpeedModifier = 1f;
         }
 
         DashCooldown();
@@ -86,7 +96,7 @@ public class Movement_Player : MonoBehaviour
 
     private void Movement(Vector2 moveInputVector)
     {
-        rb2d.MovePosition((Vector2)transform.position + moveInputVector * moveSpeed * Time.deltaTime);
+        rb2d.MovePosition((Vector2)transform.position + moveInputVector * moveSpeedModifier * moveSpeed * Time.deltaTime);
     }
     #endregion
 

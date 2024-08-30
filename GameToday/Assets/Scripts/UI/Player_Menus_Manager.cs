@@ -69,6 +69,8 @@ public class Player_Menus_Manager : MonoBehaviour
         mainMenu.gameObject.SetActive(true);
         HideDeathMenu();
         pauseMenuButton.gameObject.SetActive(false);
+
+        DialogManager.instance.introDialogEnded.AddListener(OnDialogPartFinished);
     }
 
     void Update()
@@ -80,6 +82,11 @@ public class Player_Menus_Manager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.T))
         {
             ShowDeathMenu();
+        }
+
+        if (inMainMenu)
+        {
+            pauseMenuButton.gameObject.SetActive(false);
         }
     } 
 
@@ -98,7 +105,10 @@ public class Player_Menus_Manager : MonoBehaviour
 
     }
     
-    
+    public void OnDialogPartFinished()
+    {
+        pauseMenuButton.gameObject.SetActive(true);
+    }
 
     #region StartGame
     private void CloseMainMenu()
@@ -106,7 +116,7 @@ public class Player_Menus_Manager : MonoBehaviour
         mainMenu.SetTrigger("Close");
         StartCoroutine(TurnOffPanelAfterDelay(mainMenuImage));
         DialogManager.instance.StartIntroDialog(introDialog);
-        inMainMenu = false;
+        
 
     }
     private void OnIntroDialogEnded()
@@ -117,7 +127,8 @@ public class Player_Menus_Manager : MonoBehaviour
     public void InitializePlayer()
     {
         PlayerState_Manager.instance.InitializePlayer();
-        pauseMenuButton.gameObject.SetActive(true);
+        inMainMenu = false;
+        
     }
     #endregion
 

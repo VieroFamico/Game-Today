@@ -9,7 +9,7 @@ public class Item_Container : MonoBehaviour
 
     public float pickUpDistance;
 
-    public bool isPickedUp;
+    public bool isPickedUp { get; private set; }
 
     private SpriteRenderer spriteRenderer;
     private Transform player;
@@ -19,26 +19,13 @@ public class Item_Container : MonoBehaviour
         player = PlayerState_Manager.instance.player.transform;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        GetPlayerInteractInput();
-    }
-    private void GetPlayerInteractInput()
-    {
-        if (Vector2.Distance(transform.position, player.transform.position) < pickUpDistance)
-        {
-            if (Input.GetKey(KeyCode.E))
-            {
-                PickUp();
-            }
-        }
-    }
-
-    private void PickUp()
+    public void PickUp()
     {
         isPickedUp = true;
-        puzzleRoomModule.CheckForItemsPickedUp();
-        Destroy(gameObject);
+        if (puzzleRoomModule)
+        {
+            puzzleRoomModule.CheckForItemsPickedUp();
+        }
+        gameObject.SetActive(false);
     }
 }

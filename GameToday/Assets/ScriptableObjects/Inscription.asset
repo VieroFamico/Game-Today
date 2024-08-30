@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09396dfbfcd9c6243a556ced5f32e7f1, type: 3}
+  m_Name: Inscription
+  m_EditorClassIdentifier: 
+  itemName: Inscription
+  itemDescription: '''Tis no wonder this place doth harbor relics of yore, such as
+    this stone inscribed with ancient images. From the carvings, I may surmise that
+    it doth point toward some structure or device, though its purpose remaineth obscure
+    to me. But what might these symbols on the left portend? Do they signify each
+    offering, or the fruits of this contrivance?'
+  ItemSprite: {fileID: 21300000, guid: 7834a03e44434c445837de91c1e89e8b, type: 3}

@@ -18,8 +18,14 @@ public class Enemy_Spawner : MonoBehaviour
 
     public EnemyToSpawn enemiesToSpawn;
 
+    private Animator animator;
 
     private float currTime = 0f;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
     void Update()
     {
         if(!combatRoomModule.isActive)
@@ -42,6 +48,7 @@ public class Enemy_Spawner : MonoBehaviour
 
     private void Spawn(Base_Enemy enemy)
     {
+        animator.SetTrigger("Spawning");
         Base_Enemy spawnedEnemy = Instantiate(enemy, spawnPoint.position, Quaternion.identity, transform);
         spawnedEnemy.room = combatRoomModule.room;
         spawnedEnemy.combatRoom = combatRoomModule;

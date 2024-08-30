@@ -21,9 +21,11 @@ public class Puzzle_Room_Module : MonoBehaviour
 
     public Base_Item_ScriptableObject itemToDisplay;
     public Item_Container[] items;
+    public Item_Container itemToDisplayOnPickUp;
 
     private AudioSource puzzleAudioSource;
     private bool puzzleStarted = false;
+    private bool stopPuzzle = false;
     private float currTime;
     private bool musicStopped = false;
 
@@ -37,16 +39,22 @@ public class Puzzle_Room_Module : MonoBehaviour
         {
             item.puzzleRoomModule = this;
         }
+        itemToDisplayOnPickUp.gameObject.SetActive(false);
     }
 
     void Update()
     {
-        if (room.dialogCompleted && !puzzleStarted && room.roomIsActive)
+        if(itemToDisplayOnPickUp.isPickedUp && !room.roomIsCompleted)
+        {
+            CompleteRoom();
+        }
+
+        if (room.dialogCompleted && !puzzleStarted && !stopPuzzle && room.roomIsActive)
         {
             StartPuzzle();
         }
 
-        if (!puzzleStarted)
+        if (!puzzleStarted || stopPuzzle)
         {
             return;
         }
@@ -133,11 +141,21 @@ public class Puzzle_Room_Module : MonoBehaviour
             }
         }
 
-        RoomCompleted();
-
+        puzzleStarted = false;
+        stopPuzzle = true;
+        puzzleAudioSource.Pause();
+        roomLight.enabled = true;
+        DropFinalItem();
     }
-    private void RoomCompleted()
+
+    public void DropFinalItem()
     {
+        itemToDisplayOnPickUp.gameObject.SetActive(true);
+    }
+    private void CompleteRoom()
+    {
+        Destroy(itemToDisplayOnPickUp.gameObject);
+
         puzzleAudioSource.Stop();
         roomLight.enabled = true; // Keep the light on
         puzzleStarted = false;

@@ -15,6 +15,8 @@ public class Attacking_Player : MonoBehaviour
     private Animator swordAnimator;
 
     [Header("Variables")]
+    public float attackDamageModifier = 1f;
+    public float attackSizeModifier = 1f;
     public float BA_PushForce;
     public float BA_CancelDuration; //BA = basic attack
     public float BA_Duration;
@@ -36,6 +38,17 @@ public class Attacking_Player : MonoBehaviour
     void Update()
     {
         GetAttackInput();
+
+        if (PlayerState_Manager.instance.inHarmonyState)
+        {
+            attackDamageModifier = 2f;
+            attackSizeModifier = 1.5f;
+        }
+        else
+        {
+            attackDamageModifier = 1f;
+            attackSizeModifier = 1f;
+        }
     }
 
     private void GetAttackInput()
@@ -113,7 +126,8 @@ public class Attacking_Player : MonoBehaviour
 
         yield return new WaitForSeconds(BA_Duration/2);
 
-        RaycastHit2D[] raycastHit2D = Physics2D.BoxCastAll(attackCollider.transform.position, attackCollider.bounds.size * 1.5f, 0f, attackCollider.transform.forward);
+        RaycastHit2D[] raycastHit2D = Physics2D.BoxCastAll(swordTransform.transform.position, attackCollider.bounds.size * 1.5f * attackSizeModifier, 0f,
+            attackCollider.transform.forward, 0.5f);
 
         foreach (RaycastHit2D hit in raycastHit2D)
         {
@@ -121,7 +135,7 @@ public class Attacking_Player : MonoBehaviour
 
             if (entity)
             {
-                entity.TakeDamage(damage);
+                entity.TakeDamage(damage * (int)attackDamageModifier);
 
                 Vector2 dir = (entity.transform.position - transform.position).normalized;
                 entity.GetComponent<Base_Enemy>().KnockBack(dir);
@@ -203,6 +217,8 @@ public class Attacking_Player : MonoBehaviour
             }
             swordTransform.position = (Vector2)transform.position + (direction * 0.6f);
         }
+
+        swordTransform.transform.localScale = Vector3.one * attackSizeModifier;
 
         playerAnimator.SetFloat("HorizontalAttackDirection", direction.x * tempVectorDistance);
         playerAnimator.SetFloat("VerticalAttackDirection", direction.y * tempVectorDistance);
