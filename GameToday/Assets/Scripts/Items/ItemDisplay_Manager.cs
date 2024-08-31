@@ -30,7 +30,6 @@ public class ItemDisplay_Manager : MonoBehaviour
     private void Start()
     {
         closeDisplayButton.onClick.AddListener(CloseDisplay);
-        CloseDisplay();
     }
     public void ShowItem(Base_Item_ScriptableObject itemToShow)
     {
