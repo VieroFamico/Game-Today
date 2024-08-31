@@ -474,7 +474,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e4e3523de21f934eb92226741cab3c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BA_AudioClips: []
+  BA_AudioClips:
+  - {fileID: 8300000, guid: 36b410b57e1319d4589fd2b8c67127c0, type: 3}
+  - {fileID: 8300000, guid: 36b410b57e1319d4589fd2b8c67127c0, type: 3}
+  - {fileID: 8300000, guid: 36b410b57e1319d4589fd2b8c67127c0, type: 3}
   playerAudioSource: {fileID: 9217811681915127866}
   attackCollider: {fileID: 7094961159967840469}
   swordTransform: {fileID: 7452606182651515801}
@@ -496,7 +499,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 608a8d59cd213924b82011541c5dbca2, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -11827,7 +11830,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2478016557878810847
 Transform:
   m_ObjectHideFlags: 0
@@ -11851,7 +11854,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9120600710910399833}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

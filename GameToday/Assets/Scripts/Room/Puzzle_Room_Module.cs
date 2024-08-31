@@ -9,7 +9,7 @@ public class Puzzle_Room_Module : MonoBehaviour
     public Light2D roomLight;
     public AudioClip puzzleSong;
 
-    [Header("Variables")]
+    [Header("Song and Light's Variables")]
     public float songActiveIntervalMin;
     public float songActiveIntervalMax;
     public float songInactiveIntervalMin;
@@ -19,6 +19,7 @@ public class Puzzle_Room_Module : MonoBehaviour
     public float flickerSpeed = 0.1f; // The speed of the flicker
     private bool isFlickering = false; // To track if the flicker is currently happening
 
+    [Header("Items")]
     public Base_Item_ScriptableObject itemToDisplay;
     public Item_Container[] items;
     public Item_Container itemToDisplayOnPickUp;
@@ -51,7 +52,7 @@ public class Puzzle_Room_Module : MonoBehaviour
 
         if (room.dialogCompleted && !puzzleStarted && !stopPuzzle && room.roomIsActive)
         {
-            StartPuzzle();
+            ActivateRoom();
         }
 
         if (!puzzleStarted || stopPuzzle)
@@ -71,13 +72,15 @@ public class Puzzle_Room_Module : MonoBehaviour
 
         KeepTrackOfMusic();
     }
-    public void StartPuzzle()
+    public void ActivateRoom()
     {
         puzzleStarted = true;
         currTime = Random.Range(songActiveIntervalMin, songActiveIntervalMax);
         puzzleAudioSource.Play();
         roomLight.enabled = false;
         musicStopped = false;
+
+        Audio_Manager.instance.PlaySong(null);
     }
 
     private void KeepTrackOfMusic()

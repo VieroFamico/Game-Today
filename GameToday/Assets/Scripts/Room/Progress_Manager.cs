@@ -5,10 +5,14 @@ using UnityEngine;
 public class Progress_Manager : MonoBehaviour
 {
     public Collider2D victoryCollider;
-
+    public AudioClip victorySong;
     public Dialog victoryDialog;
 
     private bool isVictory = false;
+    private void Start()
+    {
+        DialogManager.instance.dialogEnded.AddListener(OnDialogEnded);
+    }
     private void Update()
     {
         if (!isVictory)
@@ -38,11 +42,21 @@ public class Progress_Manager : MonoBehaviour
         Player_Menus_Manager.instance.TurnOnVictoryScene(victoryDialog);
         isVictory = true;
 
+        Audio_Manager.instance.PlaySong(victorySong);
+
         Room_Intro[] rooms = FindObjectsOfType<Room_Intro>();
 
         foreach(Room_Intro room in rooms)
         {
             room.OpenExitDoor();    
+        }
+    }
+
+    private void OnDialogEnded()
+    {
+        if(isVictory)
+        {
+            Audio_Manager.instance.PlayOpeningSong();
         }
     }
 }

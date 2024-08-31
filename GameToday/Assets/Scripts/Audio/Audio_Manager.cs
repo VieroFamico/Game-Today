@@ -10,6 +10,10 @@ public class Audio_Manager : MonoBehaviour
     [Header("Audio Settings")]
     public AudioMixerGroup defaultMixerGroup;
 
+    public AudioClip openingBackgroundSong;
+
+    private AudioSource audioSource;
+
     private void Awake()
     {
         if (instance != null)
@@ -25,7 +29,8 @@ public class Audio_Manager : MonoBehaviour
     void Start()
     {
         SetAllAudioSourcesToMixer();
-
+        audioSource = GetComponent<AudioSource>();
+        PlaySong(openingBackgroundSong);
     }
 
     public void SetAllAudioSourcesToMixer()
@@ -45,4 +50,19 @@ public class Audio_Manager : MonoBehaviour
         SetAllAudioSourcesToMixer();
     }
 
+    public void PlaySong(AudioClip songToPlay)
+    {
+        audioSource.Stop();
+
+        if(songToPlay)
+        {
+            audioSource.clip = songToPlay;
+            audioSource.Play();
+        }
+    }
+
+    public void PlayOpeningSong()
+    {
+        PlaySong(openingBackgroundSong);
+    }
 }

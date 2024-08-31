@@ -5,13 +5,16 @@ using UnityEngine;
 
 public class Combat_Room_Module : MonoBehaviour
 {
-    public bool isActive;
     public Room_Intro room;
-    public bool hasLoreItem;
+    public AudioClip combatRoomSong;
+    public bool isActive;
 
+    [Header("Items")]
+    public bool hasLoreItem;
     public Base_Item_ScriptableObject itemToDisplay;
     public Item_Container itemToDisplayOnPickUp;
 
+    [Header("Pillars and Spawners")]
     public List<Pillar_Entity> roomPillars;
     public Enemy_Spawner[] spawners;
 
@@ -64,6 +67,8 @@ public class Combat_Room_Module : MonoBehaviour
         {
             pillar.StartRoom();
         }
+
+        Audio_Manager.instance.PlaySong(combatRoomSong);
     }
     public List<Pillar_Entity> GetRoomPillars()
     {
