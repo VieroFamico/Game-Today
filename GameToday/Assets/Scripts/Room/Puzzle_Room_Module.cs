@@ -162,7 +162,9 @@ public class Puzzle_Room_Module : MonoBehaviour
         puzzleAudioSource.Stop();
         roomLight.enabled = true; // Keep the light on
         puzzleStarted = false;
+
         ItemDisplay_Manager.instance.ShowItem(itemToDisplay);
+        Audio_Manager.instance.PlayOpeningSong();
 
         room.CompleteThisRoom();
     }

@@ -38,11 +38,14 @@ public class ItemDisplay_Manager : MonoBehaviour
         itemName.text = itemToShow.name;
         itemDescription.text = itemToShow.itemDescription;
         itemImage.sprite = itemToShow.ItemSprite;
+
+        Player_Menus_Manager.instance.pauseMenuButton.gameObject.SetActive(false);
     }
 
     public void CloseDisplay()
     {
         showItemAnimator.SetTrigger("Hide");
+        Player_Menus_Manager.instance.pauseMenuButton.gameObject.SetActive(true);
     }
 
     private IEnumerator DisableDisplayPanelAfterDelay()

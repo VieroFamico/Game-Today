@@ -137,6 +137,17 @@ public class PlayerState_Manager : MonoBehaviour
         inHarmonyState = false;
     }
 
+    public void FullRecovery()
+    {
+        player.currentHP = player.maxHP;
+        player.UpdateHealthSlider();
+
+        currHarmonyPercentage = 0;
+        harmonySlider.value = currHarmonyPercentage;
+        harmonySlider.gameObject.SetActive(false);
+
+    }
+
     #region Harmony/Unstable State
     public void ChangeState()
     {

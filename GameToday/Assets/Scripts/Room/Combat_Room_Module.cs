@@ -119,6 +119,9 @@ public class Combat_Room_Module : MonoBehaviour
             Destroy(itemToDisplayOnPickUp.gameObject);
         }
 
+        PlayerState_Manager.instance.FullRecovery();
+        Audio_Manager.instance.PlayOpeningSong();
+
         isActive = false;
         ItemDisplay_Manager.instance.ShowItem(itemToDisplay);
         room.CompleteThisRoom();

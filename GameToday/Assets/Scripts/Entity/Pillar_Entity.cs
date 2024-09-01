@@ -19,14 +19,20 @@ public class Pillar_Entity : Entities
     public bool isCharged { get; private set;}
 
     private Player_Entity player;
+    private new Collider2D collider2D;
 
     private float currChargePercentage = 0;
     private float currActivatePercentage = 0;
     public override void Start()
     {
-        currentHP = maxHP;
+        base.Start();
+
         player = FindAnyObjectByType<Player_Entity>();
+
         UpdateSlidersVisibility();
+        UpdateHealthSlider();
+        collider2D = GetComponent<Collider2D>();
+        collider2D.enabled = true;
     }
 
     // Update is called once per frame
@@ -66,7 +72,7 @@ public class Pillar_Entity : Entities
         if (currentHP <= 0)
         {
             currentHP = 0;
-
+            Dead();
             Deactivate();
             return;
         }
@@ -87,13 +93,18 @@ public class Pillar_Entity : Entities
     private void FullyCharged()
     {
         isCharged = true;
+
         currentHP = maxHP;
+        UpdateHealthSlider();
+
         isActive = false;
     }
 
     private void Deactivate()
     {
         if(isActive) isActive = false;
+
+        collider2D.enabled = false;
         UpdateSlidersVisibility();
     }
 
@@ -120,7 +131,10 @@ public class Pillar_Entity : Entities
         {
             isActive = true;
             currActivatePercentage = 0;
+            collider2D.enabled = true;
+
             UpdateSlidersVisibility();
+
             currentHP = maxHP;
             UpdateHealthSlider();
         }
